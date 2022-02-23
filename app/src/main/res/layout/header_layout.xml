@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dashboard_flayout"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize">
+
+    <TextView
+        android:id="@+id/title_lbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_20" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_back_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start|center_vertical"
+        android:layout_marginStart="@dimen/common_margin_20"
+        android:paddingStart="@dimen/common_margin_10"
+        android:paddingEnd="@dimen/common_margin_10"
+        android:adjustViewBounds="false"
+        android:contentDescription="@string/img_desc"
+        android:maxWidth="32dp"
+        android:maxHeight="32dp"
+        android:scaleType="centerInside"
+        android:visibility="visible"
+        app:srcCompat="@drawable/ic_back_arrow" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/settings_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|center_vertical"
+        android:layout_marginEnd="@dimen/common_margin_20"
+        android:paddingStart="@dimen/common_margin_10"
+        android:paddingEnd="@dimen/common_margin_10"
+        android:adjustViewBounds="false"
+        android:contentDescription="@string/img_desc"
+        android:maxWidth="32dp"
+        android:maxHeight="32dp"
+        android:scaleType="centerInside"
+        android:visibility="visible"
+        app:srcCompat="@drawable/ic_settings" />
+
+</FrameLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/help_title_rlay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/common_margin_10">
+
+        <TextView
+            android:id="@+id/help_title_tview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/help_plus_img"
+            android:paddingEnd="@dimen/common_margin_10"
+            android:gravity="start"
+            android:text="@string/question"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_16" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/help_plus_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+            android:maxWidth="32dp"
+            android:maxHeight="32dp"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/ic_plus" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/help_answer_tview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:gravity="start"
+        android:padding="@dimen/common_margin_10"
+        android:text="@string/question_answer"
+        android:textAlignment="textStart"
+        android:textColor="@color/hint_color"
+        android:textSize="@dimen/text_14"
+        android:visibility="gone" />
+
+    <View
+        android:id="@+id/qa_divider_view"
+        style="@style/view_theme" />
+
+</LinearLayout>

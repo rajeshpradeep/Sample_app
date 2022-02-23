@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ui.settings.NotificationsFragment">
+
+    <LinearLayout
+        android:id="@+id/notification_parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/bg_screen">
+
+        <LinearLayout
+            android:id="@+id/notification_top_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_curve_25"
+            android:paddingTop="10dp"
+            android:paddingBottom="100dp"
+            android:orientation="vertical">
+
+            <include layout="@layout/header_layout" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_margin_20"
+            android:layout_marginEnd="@dimen/common_margin_20"
+            android:layout_marginTop="-80dp"
+            android:padding="@dimen/common_margin_20"
+            android:background="@drawable/bg_white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/email_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:gravity="start"
+                android:text="@string/emailid"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_14" />
+
+            <LinearLayout
+                android:id="@+id/email_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:background="@drawable/bg_edittext"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/email_etext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/common_margin_20"
+                    android:layout_marginEnd="@dimen/common_margin_20"
+                    android:background="@null"
+                    android:ems="10"
+                    android:gravity="center|start"
+                    android:hint="@string/enter_email"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/username_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:gravity="start"
+                android:text="@string/username"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_14" />
+
+            <LinearLayout
+                android:id="@+id/username_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:background="@drawable/bg_edittext_gray"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/username_etext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/common_margin_20"
+                    android:layout_marginEnd="@dimen/common_margin_20"
+                    android:background="@null"
+                    android:ems="10"
+                    android:enabled="false"
+                    android:gravity="center|start"
+                    android:hint="@string/enter_username"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>
+
+            <!--<TextView
+                android:id="@+id/password_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:gravity="start"
+                android:text="@string/password"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_14" />
+
+            <LinearLayout
+                android:id="@+id/password_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:background="@drawable/bg_edittext"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/password_etext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/common_margin_20"
+                    android:layout_marginEnd="@dimen/common_margin_20"
+                    android:background="@null"
+                    android:ems="10"
+                    android:gravity="center|start"
+                    android:hint="@string/enter_password"
+                    android:imeOptions="actionNext"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/password_status_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".1"
+                    android:adjustViewBounds="true"
+                    android:minWidth="22dp"
+                    android:minHeight="22dp"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/ic_info_gray" />
+
+                <TextView
+                    android:id="@+id/password_status_lbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".2"
+                    android:padding="@dimen/common_margin_5"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/hint_color"
+                    android:textSize="@dimen/text_14"
+                    android:visibility="gone" />
+
+                <androidx.appcompat.widget.AppCompatSeekBar
+                    android:id="@+id/password_status_seekbar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight=".7"
+                    android:indeterminate="false"
+                    android:maxHeight="@dimen/common_margin_20"
+                    android:minHeight="8dp"
+                    android:padding="@dimen/common_margin_5"
+                    android:progress="0"
+                    android:thumb="@null"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/question_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:gravity="start"
+                android:text="@string/secret_question"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_14" />
+
+            <LinearLayout
+                android:id="@+id/question_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:background="@drawable/bg_edittext"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/question_etext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/common_margin_20"
+                    android:layout_marginEnd="@dimen/common_margin_20"
+                    android:background="@null"
+                    android:drawableEnd="@drawable/ic_dropdown_arrow"
+                    android:ems="10"
+                    android:gravity="center|start"
+                    android:hint="@string/select"
+                    android:imeOptions="actionDone"
+                    android:inputType="none"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/answer_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:gravity="start"
+                android:text="@string/secret_answer"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_14" />
+
+            <LinearLayout
+                android:id="@+id/answer_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:background="@drawable/bg_edittext"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/answer_etext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/common_margin_20"
+                    android:layout_marginEnd="@dimen/common_margin_20"
+                    android:background="@null"
+                    android:ems="10"
+                    android:gravity="center|start"
+                    android:hint="@string/enter_answer"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>-->
+
+            <TextView
+                android:id="@+id/fname_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:gravity="start"
+                android:text="@string/first_name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_14" />
+
+            <LinearLayout
+                android:id="@+id/fname_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:background="@drawable/bg_edittext"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/fname_etext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/common_margin_20"
+                    android:layout_marginEnd="@dimen/common_margin_20"
+                    android:background="@null"
+                    android:ems="10"
+                    android:gravity="center|start"
+                    android:hint="@string/enter_first_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/lname_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:gravity="start"
+                android:text="@string/last_name"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_14" />
+
+            <LinearLayout
+                android:id="@+id/lname_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:background="@drawable/bg_edittext"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/lname_etext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/common_margin_20"
+                    android:layout_marginEnd="@dimen/common_margin_20"
+                    android:background="@null"
+                    android:ems="10"
+                    android:gravity="center|start"
+                    android:hint="@string/enter_last_name"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/address1_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:gravity="start"
+                android:text="@string/address1"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_14" />
+
+            <LinearLayout
+                android:id="@+id/address1_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:background="@drawable/bg_edittext"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/address1_etext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/common_margin_20"
+                    android:layout_marginEnd="@dimen/common_margin_20"
+                    android:background="@null"
+                    android:ems="10"
+                    android:gravity="center|start"
+                    android:hint="@string/enter_address"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/address2_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:gravity="start"
+                android:text="@string/address2"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_14" />
+
+            <LinearLayout
+                android:id="@+id/address2_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:background="@drawable/bg_edittext"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/address2_etext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/common_margin_20"
+                    android:layout_marginEnd="@dimen/common_margin_20"
+                    android:background="@null"
+                    android:ems="10"
+                    android:gravity="center|start"
+                    android:hint="@string/enter_address"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/city_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:gravity="start"
+                android:text="@string/city"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_14" />
+
+            <LinearLayout
+                android:id="@+id/city_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:background="@drawable/bg_edittext"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/city_etext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/common_margin_20"
+                    android:layout_marginEnd="@dimen/common_margin_20"
+                    android:background="@null"
+                    android:ems="10"
+                    android:gravity="center|start"
+                    android:hint="@string/enter_city"
+                    android:imeOptions="actionNext"
+                    android:inputType="textCapWords"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/state_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:gravity="start"
+                android:text="@string/state"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_14" />
+
+            <LinearLayout
+                android:id="@+id/state_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:background="@drawable/bg_edittext"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/state_etext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/common_margin_20"
+                    android:layout_marginEnd="@dimen/common_margin_20"
+                    android:background="@null"
+                    android:drawableEnd="@drawable/ic_dropdown_arrow"
+                    android:ems="10"
+                    android:gravity="center|start"
+                    android:hint="@string/select"
+                    android:imeOptions="actionNext"
+                    android:inputType="none"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/country_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:gravity="start"
+                android:text="@string/country"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_14" />
+
+            <LinearLayout
+                android:id="@+id/country_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:background="@drawable/bg_edittext"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/country_etext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/common_margin_20"
+                    android:layout_marginEnd="@dimen/common_margin_20"
+                    android:background="@null"
+                    android:drawableEnd="@drawable/ic_dropdown_arrow"
+                    android:ems="10"
+                    android:gravity="center|start"
+                    android:hint="@string/select"
+                    android:imeOptions="actionNext"
+                    android:inputType="none"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/postal_code_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:gravity="start"
+                android:text="@string/postal_code"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/text_14" />
+
+            <LinearLayout
+                android:id="@+id/postal_code_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:background="@drawable/bg_edittext"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/postal_code_etext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/common_margin_20"
+                    android:layout_marginEnd="@dimen/common_margin_20"
+                    android:background="@null"
+                    android:ems="10"
+                    android:gravity="center|start"
+                    android:hint="@string/enter_postal_code"
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="5"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5">
+
+                <TextView
+                    android:id="@+id/leader_board_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:text="@string/leaderboard_alias"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/leaderboard_alias_info_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:minWidth="22dp"
+                    android:minHeight="22dp"
+                    android:scaleType="centerInside"
+                    app:srcCompat="@drawable/ic_info_gray" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/leader_board_layout"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:background="@drawable/bg_edittext"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/leader_board_etext"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/common_margin_20"
+                    android:layout_marginEnd="@dimen/common_margin_20"
+                    android:background="@null"
+                    android:ems="10"
+                    android:gravity="center|start"
+                    android:hint="@string/enter_alias"
+                    android:imeOptions="actionDone"
+                    android:inputType="textCapWords"
+                    android:maxLines="1"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="@dimen/common_margin_10"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/out_of_leaderboard_checked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/yellow_gradient"
+                    android:checked="false"
+                    android:freezesText="true"
+                    android:padding="@dimen/common_margin_5"
+                    android:shadowColor="@color/hint_color" />
+
+                <TextView
+                    android:id="@+id/out_of_leaderboard_checked_tview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/out_of_leaderboard"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/hint_color"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/save_changes_btn"
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/common_margin_20"
+                android:layout_marginBottom="@dimen/common_margin_20"
+                android:background="@drawable/btn_bg_colorprimary"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:paddingStart="50dp"
+                android:paddingEnd="50dp"
+                android:text="@string/save_changes"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_16" />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <corners
+                android:radius="2dp" />
+            <gradient
+                android:angle="270"
+                android:startColor="@color/switch_bg_color"
+                android:centerColor="@color/seekbar_non_progress"
+                android:endColor="@color/switch_bg_color"
+                android:centerY="0.75"
+                android:type="linear" />
+            <!--<solid android:color="@color/seekbar_non_progress"/>-->
+        </shape>
+    </item>
+</layer-list>

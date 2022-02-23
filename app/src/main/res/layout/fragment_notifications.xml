@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/notification_parent_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_screen"
+    android:orientation="vertical"
+    android:weightSum="1"
+    tools:context=".ui.settings.NotificationsFragment">
+
+    <LinearLayout
+        android:id="@+id/notification_top_lay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".2"
+        android:background="@drawable/bg_curve_25"
+        android:orientation="vertical">
+
+        <include layout="@layout/header_layout" />
+    </LinearLayout>
+
+    <Space
+        android:id="@+id/marginSpacer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/notification_top_lay"
+        app:layout_constraintLeft_toLeftOf="@id/notification_top_lay"
+        app:layout_constraintRight_toRightOf="@id/notification_top_lay" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/common_margin_20"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marginSpacer"
+        android:layout_marginEnd="@dimen/common_margin_20"
+        android:background="@drawable/bg_white"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:id="@+id/notify_ev_rlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_margin_5"
+            android:padding="@dimen/common_margin_10">
+
+            <TextView
+                android:id="@+id/notify_ev_tview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/notify_ev_scompat"
+                android:maxLines="2"
+                android:text="@string/notify_ev"
+                android:textAlignment="textStart"
+                android:textColor="@color/hint_color"
+                android:textSize="@dimen/text_14" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/notify_ev_scompat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:checked="false"
+                android:theme="@style/switch_compact_theme" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/notify_ev_divew"
+            style="@style/view_theme"
+            android:layout_marginStart="@dimen/common_margin_10"
+            android:layout_marginEnd="@dimen/common_margin_10" />
+
+        <RelativeLayout
+            android:id="@+id/notify_if_interrupt_rlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/common_margin_10">
+
+            <TextView
+                android:id="@+id/notify_if_interrupt_tview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/notify_if_interrupt_scompat"
+                android:layout_centerVertical="true"
+                android:maxLines="2"
+                android:text="@string/notify_charge_interrupt"
+                android:textAlignment="textStart"
+                android:textColor="@color/hint_color"
+                android:textSize="@dimen/text_14" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/notify_if_interrupt_scompat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:checked="false"
+                android:theme="@style/switch_compact_theme" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/notify_if_interrupt_dview"
+            style="@style/view_theme"
+            android:layout_marginStart="@dimen/common_margin_10"
+            android:layout_marginEnd="@dimen/common_margin_10" />
+
+        <RelativeLayout
+            android:id="@+id/notify_ev_plugin_rlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/common_margin_5"
+            android:padding="@dimen/common_margin_10">
+
+            <TextView
+                android:id="@+id/notify_ev_plugin_tview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/notify_ev_plugin_scompat"
+                android:maxLines="2"
+                android:text="@string/notify_ev_plugin"
+                android:textAlignment="textStart"
+                android:textColor="@color/hint_color"
+                android:textSize="@dimen/text_14" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/notify_ev_plugin_scompat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:checked="false"
+                android:padding="@dimen/common_margin_5"
+                android:theme="@style/switch_compact_theme" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/notify_me_start_dview"
+            style="@style/view_theme"
+            android:layout_marginStart="@dimen/common_margin_10"
+            android:layout_marginEnd="@dimen/common_margin_10" />
+
+        <RelativeLayout
+            android:id="@+id/notify_me_at_rlay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/common_margin_10">
+
+            <TextView
+                android:id="@+id/notify_me_at_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/notify_time_layout"
+                android:maxLines="2"
+                android:text="@string/notify_me_at"
+                android:textAlignment="textStart"
+                android:textColor="@color/hint_color"
+                android:textSize="@dimen/text_14" />
+
+            <LinearLayout
+                android:id="@+id/notify_time_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="@dimen/common_margin_5"
+                android:layout_marginBottom="@dimen/common_margin_5"
+                android:background="@drawable/bg_edittext"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/notify_time_etext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:drawableEnd="@drawable/ic_dropdown_arrow"
+                    android:ems="10"
+                    android:gravity="center"
+                    android:hint="@string/select"
+                    android:imeOptions="actionDone"
+                    android:inputType="none"
+                    android:maxLines="1"
+                    android:paddingEnd="@dimen/common_margin_20"
+                    android:textColor="@color/hint_color"
+                    android:textColorHint="@color/hint_color"
+                    android:textCursorDrawable="@null"
+                    android:textSize="@dimen/text_14" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/notify_me_time_dview"
+                style="@style/view_theme"
+                android:layout_below="@+id/notify_time_layout"/>
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/apply_btn"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/common_margin_25"
+            android:layout_marginTop="@dimen/common_margin_20"
+            android:layout_marginEnd="@dimen/common_margin_25"
+            android:layout_marginBottom="@dimen/common_margin_20"
+            android:background="@drawable/btn_bg_colorprimary"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:paddingStart="50dp"
+            android:paddingEnd="50dp"
+            android:text="@string/apply"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_16" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

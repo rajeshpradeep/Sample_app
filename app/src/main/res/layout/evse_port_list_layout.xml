@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp"
+    android:background="@drawable/bg_white"
+    android:orientation="vertical"
+    android:stateListAnimator="@null">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/common_margin_10"
+        android:layout_marginEnd="@dimen/common_margin_10"
+        android:adjustViewBounds="true"
+        android:maxWidth="22dp"
+        android:maxHeight="22dp"
+        android:padding="@dimen/common_margin_5"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/ic_close" />
+
+    <TextView
+        android:id="@+id/port_title_lbl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingTop="@dimen/common_margin_5"
+        android:paddingBottom="@dimen/common_margin_10"
+        android:text="@string/evse_id_port"
+        android:stateListAnimator="@null"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textAllCaps="false"
+        android:textColor="@color/hint_color"
+        android:textSize="@dimen/text_15" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/port_rview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:itemCount="6"
+        tools:listitem="@layout/evse_port_item_layout"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/port_ok_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/common_margin_45"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/common_margin_10"
+        android:layout_marginBottom="@dimen/common_margin_10"
+        android:background="@drawable/btn_bg_colorprimary"
+        android:gravity="center"
+        android:paddingStart="@dimen/common_margin_50"
+        android:paddingEnd="@dimen/common_margin_50"
+        android:text="@string/ok"
+        android:textAllCaps="true"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_15"/>
+
+</LinearLayout>

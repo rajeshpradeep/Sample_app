@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginLeft="@dimen/common_margin_5"
+    android:layout_marginRight="@dimen/common_margin_5"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ok_dialog_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/common_margin_10"
+        android:layout_marginBottom="@dimen/common_margin_10"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/header_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingStart="@dimen/common_margin_10"
+            android:paddingEnd="@dimen/common_margin_10"
+            android:adjustViewBounds="false"
+            android:contentDescription="@string/img_desc"
+            android:maxWidth="32dp"
+            android:maxHeight="32dp"
+            android:scaleType="centerInside"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_tick" />
+
+        <TextView
+            android:id="@+id/title_tview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/common_margin_5"
+            android:gravity="center"
+            android:paddingLeft="@dimen/common_margin_10"
+            android:paddingTop="@dimen/common_margin_5"
+            android:paddingRight="@dimen/common_margin_10"
+            android:textAlignment="inherit"
+            android:textColor="#000"
+            android:textSize="@dimen/text_15"
+            android:textStyle="bold"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/message_tview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:maxLines="10"
+            android:scrollbars="vertical"
+            android:paddingStart="@dimen/common_margin_10"
+            android:paddingEnd="@dimen/common_margin_10"
+            android:paddingTop="@dimen/common_margin_20"
+            android:paddingBottom="@dimen/common_margin_20"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textAlignment="gravity"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_15" />
+
+        <TextView
+            android:id="@+id/sub_msg_tview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@string/resend_email_confirm"
+            android:padding="@dimen/common_margin_10"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textAlignment="gravity"
+            android:visibility="gone"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_14" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ok_btn"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/common_margin_45"
+            android:layout_marginTop="@dimen/common_margin_5"
+            android:layout_marginBottom="@dimen/common_margin_5"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_bg_colorprimary"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:paddingStart="@dimen/common_margin_40"
+            android:paddingEnd="@dimen/common_margin_40"
+            android:text="@string/ok"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_15" />
+
+    </LinearLayout>
+
+</LinearLayout>

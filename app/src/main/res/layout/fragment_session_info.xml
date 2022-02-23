@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_screen"
+    android:baselineAligned="false"
+    android:id="@+id/parent_layout"
+    android:orientation="vertical"
+    tools:context=".ui.session_info.SessionInfoFragment">
+
+    <LinearLayout
+        android:id="@+id/session_top_lay"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_curve_25"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent=".2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <include layout="@layout/header_layout" />
+    </LinearLayout>
+
+    <Space
+        android:id="@+id/marginSpacer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/session_top_lay"
+        app:layout_constraintLeft_toLeftOf="@id/session_top_lay"
+        app:layout_constraintRight_toRightOf="@id/session_top_lay" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/common_margin_10"
+        android:layout_marginEnd="@dimen/common_margin_10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/marginSpacer">
+
+        <TextView
+            android:id="@+id/no_rec_found_lbl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:text="@string/no_record_found"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14"
+            android:visibility="gone" />
+
+        <!--<androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/left_arrow_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:paddingStart="@dimen/common_margin_5"
+            android:paddingEnd="@dimen/common_margin_5"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/img_desc"
+            android:maxWidth="32dp"
+            android:maxHeight="32dp"
+            android:tint="@color/seekbar_non_progress"
+            android:rotation="90"
+            android:scaleType="fitXY"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_dropdown_arrow" />-->
+
+        <!--<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/session_swiperefresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:paddingStart="@dimen/common_margin_10"
+            android:paddingEnd="@dimen/common_margin_10">-->
+
+            <!--<HorizontalScrollView
+            android:id="@+id/session_hscroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/left_arrow_img"
+            android:layout_toStartOf="@+id/right_arrow_img"
+            android:background="@drawable/bg_white"
+            android:paddingStart="@dimen/common_margin_10"
+            android:paddingEnd="@dimen/common_margin_10">-->
+
+            <LinearLayout
+                android:id="@+id/session_list_llay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_white"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="@dimen/common_margin_10"
+                android:paddingEnd="@dimen/common_margin_10"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/session_info_title_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/common_margin_50"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <TextView
+                        android:id="@+id/plugin_lbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:maxLines="1"
+                        android:padding="@dimen/common_margin_5"
+                        android:text="@string/plug_in_time"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/text_14" />
+
+                    <!--<TextView
+                    android:id="@+id/transaction_id_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/transaction_id"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/device_name_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/device_name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/port_name_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/port_name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/group_name_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/group_name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/station_type_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/station_type"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/energy_kwh_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/energy_kwh"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/peak_power_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/peak_power"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/avg_power_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/avg_power"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/id_tag_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/id_tag"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/session_start_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/session_start_time"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/session_end_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/session_end_time"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />-->
+
+                    <TextView
+                        android:id="@+id/session_duration_lbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+
+                        android:gravity="center_vertical"
+                        android:maxLines="2"
+                        android:padding="@dimen/common_margin_5"
+                        android:text="@string/session_duration"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/text_14" />
+
+                    <!--<TextView
+                    android:id="@+id/charge_start_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/charge_start_time"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/charge_end_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/charge_end_time"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />-->
+
+                    <TextView
+                        android:id="@+id/charge_duration_lbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+
+                        android:gravity="center_vertical"
+                        android:maxLines="2"
+                        android:padding="@dimen/common_margin_5"
+                        android:text="@string/charge_duration"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/text_14" />
+
+                    <TextView
+                        android:id="@+id/energy_kwh_lbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+
+                        android:gravity="center_vertical"
+                        android:maxLines="2"
+                        android:padding="@dimen/common_margin_5"
+                        android:text="@string/energy_kwh"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/text_14" />
+
+                    <!--<TextView
+                    android:id="@+id/end_reason_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/end_reason"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/ghg_savings_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/ghg_savings"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/ghg_saving_gals_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/ghg_savings_gal"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/start_soc_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/start_soc"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/end_soc_lbl"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:padding="@dimen/common_margin_5"
+                    android:text="@string/end_soc"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_14" />-->
+
+                </LinearLayout>
+
+                <View
+                    style="@style/view_theme"
+                    android:layout_marginStart="@dimen/common_margin_5"
+                    android:layout_marginEnd="@dimen/common_margin_5" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/session_info_rview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/session_info_list_item" />
+
+            </LinearLayout>
+            <!--</HorizontalScrollView>-->
+        <!--</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+
+        <!--<androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/right_arrow_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:paddingStart="@dimen/common_margin_5"
+            android:paddingEnd="@dimen/common_margin_5"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/img_desc"
+            android:maxWidth="32dp"
+            android:maxHeight="32dp"
+            android:rotation="270"
+            android:tint="@color/hint_color"
+            android:scaleType="fitXY"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_dropdown_arrow" />-->
+    </RelativeLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/bottom_sheet"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_login_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintDimensionRatio="16:14"
+        android:paddingTop="20dp"
+        android:elevation="20dp"
+      >
+
+        <View
+            android:id="@+id/close_btn"
+            android:layout_width="70dp"
+            android:layout_height="6dp"
+            android:background="@drawable/holder_grey_bg"
+            android:layout_gravity="center_horizontal"
+            />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/session_graph_chart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/common_margin_20" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

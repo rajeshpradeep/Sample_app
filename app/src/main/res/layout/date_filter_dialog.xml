@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/common_margin_5"
+    android:layout_marginEnd="@dimen/common_margin_5"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/common_margin_10"
+        android:layout_marginEnd="@dimen/common_margin_10"
+        android:adjustViewBounds="true"
+        android:maxWidth="22dp"
+        android:maxHeight="22dp"
+        android:padding="@dimen/common_margin_5"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/ic_close" />
+
+    <TextView
+        android:id="@+id/filter_lbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/common_margin_10"
+        android:gravity="center_horizontal"
+        android:text="@string/filter"
+        android:textAlignment="gravity"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/hint_color"
+        android:textSize="@dimen/text_18" />
+
+    <TextView
+        android:id="@+id/date_from_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_margin_25"
+        android:layout_marginTop="@dimen/common_margin_5"
+        android:layout_marginEnd="@dimen/common_margin_25"
+        android:layout_marginBottom="@dimen/common_margin_5"
+        android:gravity="start"
+        android:text="@string/date_from"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_14" />
+
+    <RelativeLayout
+        android:id="@+id/date_from_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/common_margin_25"
+        android:layout_marginTop="@dimen/common_margin_5"
+        android:layout_marginEnd="@dimen/common_margin_25"
+        android:layout_marginBottom="@dimen/common_margin_5"
+        android:background="@drawable/bg_edittext"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/date_from_etext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignEnd="@+id/ic_date_from"
+            android:layout_marginStart="@dimen/common_margin_20"
+            android:layout_marginEnd="@dimen/common_margin_20"
+            android:background="@null"
+            android:ems="10"
+            android:gravity="center|start"
+            android:hint="@string/select"
+            android:imeOptions="actionNone"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_color"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_14" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_date_from"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/common_margin_20"
+            android:layout_marginEnd="@dimen/common_margin_20"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_calendar" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/date_to_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_margin_25"
+        android:layout_marginTop="@dimen/common_margin_5"
+        android:layout_marginEnd="@dimen/common_margin_25"
+        android:layout_marginBottom="@dimen/common_margin_5"
+        android:gravity="start"
+        android:text="@string/date_to"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_14" />
+
+    <RelativeLayout
+        android:id="@+id/date_to_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/common_margin_25"
+        android:layout_marginTop="@dimen/common_margin_5"
+        android:layout_marginEnd="@dimen/common_margin_25"
+        android:layout_marginBottom="@dimen/common_margin_5"
+        android:background="@drawable/bg_edittext"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/date_to_etext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignEnd="@+id/ic_date_to"
+            android:layout_marginStart="@dimen/common_margin_20"
+            android:layout_marginEnd="@dimen/common_margin_20"
+            android:background="@null"
+            android:ems="10"
+            android:gravity="center|start"
+            android:hint="@string/select"
+            android:imeOptions="actionNone"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_color"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_14" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_date_to"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginStart="@dimen/common_margin_20"
+            android:layout_marginEnd="@dimen/common_margin_20"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/ic_calendar" />
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/filter_btn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/common_margin_25"
+        android:layout_marginTop="@dimen/common_margin_20"
+        android:layout_marginEnd="@dimen/common_margin_25"
+        android:layout_marginBottom="@dimen/common_margin_20"
+        android:background="@drawable/btn_bg_colorprimary"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        android:text="@string/filter"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_16" />
+
+    <TextView
+        android:id="@+id/clear_filter_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/common_margin_25"
+        android:layout_marginTop="@dimen/common_margin_5"
+        android:layout_marginEnd="@dimen/common_margin_25"
+        android:layout_marginBottom="@dimen/common_margin_5"
+        android:gravity="center"
+        android:paddingBottom="@dimen/common_margin_10"
+        android:text="@string/clear_filters"
+        android:textAlignment="gravity"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_14" />
+
+</LinearLayout>

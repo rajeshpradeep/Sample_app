@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item android:id="@android:id/background">
+        <shape android:shape="rectangle">
+            <corners android:radius="20dp"/>
+            <solid android:color="@color/seekbar_non_progress"/>
+        </shape>
+    </item>
+
+    <item android:id="@android:id/secondaryProgress">
+        <scale >
+            <shape android:shape="rectangle">
+                <corners android:radius="20dp"/>
+                <solid android:color="@color/seekbar_non_progress"/>
+            </shape>
+        </scale>
+    </item>
+
+    <item android:id="@android:id/progress">
+        <!--<scale
+            android:scaleWidth="25%" >
+            <shape android:shape="rectangle">
+                <corners android:radius="20dp"/>
+                <solid android:color="@color/colorAccent"/>
+            </shape>
+        </scale>
+        <scale
+            android:scaleWidth="50%" >
+            <shape android:shape="rectangle">
+                <corners android:radius="20dp"/>
+                <solid android:color="@color/password_fair"/>
+            </shape>
+        </scale>
+        <scale
+            android:scaleWidth="75%" >
+            <shape android:shape="rectangle">
+                <corners android:radius="20dp"/>
+                <solid android:color="@color/colorPrimary"/>
+            </shape>
+        </scale>-->
+        <scale
+            android:scaleWidth="100%" >
+            <shape android:shape="rectangle">
+                <corners android:radius="20dp"/>
+                <solid android:color="@color/yellow_gradient"/>
+            </shape>
+        </scale>
+    </item>
+
+</layer-list>

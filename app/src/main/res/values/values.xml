@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="CustomInputEditText">
+        <attr format="dimension" name="inputSize"/>
+        <attr format="color" name="inputColor"/>
+        <attr format="reference|string" name="inputHint"/>
+        <attr format="boolean" name="inputHintEnabled"/>
+        <attr format="integer" name="inputValueType"/>
+        <attr format="integer" name="inputLines"/>
+        <attr format="integer" name="inputMaxLines"/>
+        <attr format="boolean" name="isError"/>
+        <attr format="reference" name="errorMessage"/>
+        <attr format="reference" name="leftIcon"/>
+        <attr format="reference" name="rightIcon"/>
+        <attr format="reference" name="topIcon"/>
+        <attr format="reference" name="bottomIcon"/>
+        <attr name="android:inputType"/>
+        <attr format="integer" name="inputEmsMax"/>
+        <attr format="integer" name="inputEms"/>
+    </declare-styleable>
+
+</resources>

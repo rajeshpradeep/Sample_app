@@ -1,0 +1,250 @@
+<resources>
+    <string name="app_name">Qmulus</string>
+    <string name="img_desc">Image Description</string>
+
+    <!--Login-->
+    <string name="login_lbl">Login</string>
+    <string name="emailid">Email</string>
+    <string name="username_email">Username or Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password"><u>Forgot Password?</u></string>
+    <string name="dont_have_acc">Don\'t have an account? <u>Create Account</u></string>
+
+    <!--Forgot Password-->
+    <string name="forgot_password_lbl">Forgot Password</string>
+    <string name="your_secret_ques">Your Secret Question</string>
+    <string name="your_secret_answer">Your Secret Answer</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="back_to_login"><u>Back to Login</u></string>
+
+    <!--Create Account-->
+    <string name="create_account">Create Account</string>
+    <string name="enter_email">Enter your email</string>
+    <string name="username">Username</string>
+    <string name="enter_username">Enter username</string>
+    <string name="enter_password">Enter password</string>
+    <string name="weak">Weak</string>
+    <string name="fair">Fair</string>
+    <string name="good">Good</string>
+    <string name="strong">Strong</string>
+    <string name="secret_question">Secret Question</string>
+    <string name="secret_answer">Secret Answer</string>
+    <string name="enter_answer">Enter Answer</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="enter_first_name">Enter first name</string>
+    <string name="enter_last_name">Enter last name</string>
+    <string name="address1">Address 1</string>
+    <string name="address2">Address 2</string>
+    <string name="enter_address">Enter Address</string>
+    <string name="city">City</string>
+    <string name="enter_city">Enter city</string>
+    <string name="state">State</string>
+    <string name="country">Country</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="enter_postal_code">Enter postal code</string>
+    <string name="leaderboard_alias">Leaderboard Alias</string>
+    <string name="enter_alias">Enter Alias</string>
+    <string name="btn_continue">Continue</string>
+    <string name="save_changes">Save Changes</string>
+    <string name="accept_terms_service">I accept the Terms of Service</string>
+    <string name="accept_personal_info">I accept the Use of Personal Information</string>
+    <string name="already_have_acc">Already have an account? <u>Login</u></string>
+
+    <!--Dashboard-->
+    <string name="dashboard">Dashboard</string>
+    <string name="charge_sec">Charge Sessions</string>
+    <string name="ghg_save">GHG Savings (kg)</string>
+    <string name="monetary_save">Monetary Savings</string>
+    <string name="gas_save">Gasoline Savings (Gallons)</string>
+
+    <!--Monitor-->
+    <string name="monitor_sca">Monitor SCA</string>
+    <string name="monitor_evse">Monitor EVSE</string>
+    <string name="online">Online</string>
+    <string name="offline">Offline</string>
+    <string name="charging">Charging</string>
+    <string name="sca_battery">SCA Battery:</string>
+    <string name="last_sync">Last Sync:</string>
+    <string name="mode">Mode:</string>
+    <string name="evsc">EVSE</string>
+    <string name="evsc_type">EVSE Type</string>
+    <string name="max_amperage">Max Amperage</string>
+    <string name="status">Status</string>
+
+    <!--Bottom Menu-->
+    <string name="monitor">Monitor</string>
+    <string name="control">Control</string>
+    <string name="control_sca">Control SCA</string>
+    <string name="session_info">Session Info</string>
+    <string name="leaderboard">Leaderboard</string>
+
+    <!--Settings-->
+    <string name="settings">Settings</string>
+    <string name="adapter_management">Adapter Management</string>
+    <string name="add_device">Add Device</string>
+    <string name="vehicles">Vehicles</string>
+    <string name="notifications">Notifications</string>
+    <string name="personal_info">Personal Info</string>
+    <string name="devices">Devices</string>
+    <string name="help">Help</string>
+    <string name="logout">Log Out</string>
+    <string name="question">Question</string>
+    <string name="question_answer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</string>
+    <string name="notify_ev">Notify when EV is fully charged.</string>
+    <string name="notify_charge_interrupt">Notify if charging is unexpectedly interrupted, disabled, or delayed.</string>
+    <string name="notification_send_mw">Notifications sent to web and mobile app</string>
+
+    <!--Control-->
+    <string name="control_type">Control Type</string>
+    <string name="manual">Manual</string>
+    <string name="controlled">Controlled</string>
+    <string name="sca_mode">SCA Mode</string>
+    <string name="sca_charge_control">SCA Charge Control</string>
+    <string name="charge_current">Charge Current\n(Arms)</string>
+    <string name="active_power">Active Power\n(kW)</string>
+    <string name="charge_normally">Charge Normally</string>
+    <string name="disable_charging">Disable Charging</string>
+    <string name="controlled_charging">Controlled Charging</string>
+
+    <string name="ev_mileage">EV Mileage</string>
+    <string name="ev_mileage_control">EV Mileage Control</string>
+    <string name="disabled">Disabled</string>
+    <string name="electric_vehicle">Electric Vehicle</string>
+    <string name="ev_mileage_needed">EV Mileage Needed</string>
+    <string name="accumulate_ev_mileage">Accumulated EV Mileage</string>
+    <string name="add_vehicle_info">Please add a vehicle to your account to access this feature.</string>
+    <string name="add_vehicle">Add Vehicle</string>
+
+    <string name="timer">Timer</string>
+    <string name="timer_based_control">Timer Based Control</string>
+    <string name="set_duration">Set Duration (HH:MM)</string>
+    <string name="time_remaining">Time Remaining (HH:MM:SS)</string>
+
+    <!--Leaderboard-->
+    <string name="your_pos">Your Position</string>
+    <string name="points">Points</string>
+
+    <!--Change Password-->
+    <string name="change_password">Change Password</string>
+    <string name="current_password">Current Password</string>
+    <string name="enter_current_password">Enter Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="enter_new_password">Enter New Password</string>
+    <string name="repeat_new_password">Repeat New Password</string>
+    <string name="repeat_password">Repeat Password</string>
+    <string name="enter_repeat_password">Enter Repeat Password</string>
+
+    <!--Vehicle List-->
+    <string name="electric_range">Electric Range(mi)</string>
+    <string name="efficiency">Efficiency (kWh/mi)</string>
+    <string name="no_vehicle_found">No Vehicle Found</string>
+
+    <!--Add Vehicle-->
+    <string name="add_electric_vehicle">Add Electric Vehicle</string>
+    <string name="add_new_vehicle">Add New Vehicle</string>
+    <string name="skip_underline"><u>Skip</u></string>
+    <string name="year">Year</string>
+    <string name="make">Make</string>
+    <string name="model">Model</string>
+
+    <!--Notifications-->
+    <string name="notify_ev_full">Notify when EV is fully charged.</string>
+    <string name="notify_unexpected_interrupted">Notify if charging is unexpectedly interrupted, disabled, or delayed.</string>
+    <string name="notify_ev_plugin">Notify when it’s time to plug-in EV</string>
+    <string name="notify_me_at">Notify me at time</string>
+
+    <!--Firebase-->
+    <!--<string name="fcm_msg_token">AIzaSyAJUs1xGaVWYu2zXg2gGwOFMqbsKDOhrM4</string>-->
+    <string name="fcm_msg_token">AIzaSyDrBTsYtrJNxYo6lfPfH5modohmd1oeO_o</string>
+
+    <!--Alert-->
+    <string name="select">Select</string>
+    <string name="ok">OK</string>
+    <string name="okay">Okay</string>
+    <string name="cancel">Cancel</string>
+    <string name="done">Done</string>
+    <string name="alert">Alert</string>
+    <string name="apply">Apply</string>
+    <string name="finish">Finish</string>
+    <string name="add">Add</string>
+    <string name="update">Update</string>
+    <string name="no_internet_connection">Please check your internet connection!</string>
+    <string name="something_wrong">Something went wrong, Please try again</string>
+    <string name="invalid_token">TOKEN_INVALID</string>
+    <string name="enable">Enable</string>
+    <string name="disable">Disable</string>
+    <string name="resend_email_confirm"><u>Resend Email Confirmation</u></string>
+
+    <!--Personal Info-->
+    <string name="out_of_leaderboard">Opt Out of Leaderboard</string>
+
+    <!--Session info-->
+    <string name="plug_in_time">Plug-in Time</string>
+    <string name="session_duration">Session \nDuration</string>
+    <string name="charge_duration">Charge \nDuration</string>
+    <string name="energy_kwh">Energy \n(kWh)</string>
+    <string name="filter">Filter</string>
+    <string name="date_from">Date From</string>
+    <string name="date_to">Date To</string>
+    <string name="clear_filters"><u>Clear Filters</u></string>
+    <string name="transaction_id">Transaction ID</string>
+    <string name="device_name">Device Name</string>
+    <string name="port_name">Port Name</string>
+    <string name="group_name">Group Name</string>
+    <string name="station_type">Station Type</string>
+    <string name="peak_power">Peak Power(kW)</string>
+    <string name="avg_power">Avg Power(kW)</string>
+    <string name="id_tag">ID Tag</string>
+    <string name="session_start_time">Session Start Time</string>
+    <string name="session_end_time">Session End Time</string>
+    <string name="charge_start_time">Charge Start Time</string>
+    <string name="charge_end_time">Charge End Time</string>
+    <string name="end_reason">End Reason</string>
+    <string name="ghg_savings">GHG Savings (kg CO2)</string>
+    <string name="ghg_savings_gal">GHG Savings gal</string>
+    <string name="start_soc">Start SOC</string>
+    <string name="end_soc">End SOC</string>
+    <string name="no_record_found">No Record Found</string>
+
+    <!--Devices-->
+    <string name="device_header">To manage devices please go to Management page on the web app.</string>
+    <string name="manage_devices">Manage Devices</string>
+
+    <!--Control EVSE-->
+    <string name="control_evse">Control EVSE</string>
+    <string name="evse_id_port">EVSE ID / Port</string>
+    <string name="evse_mode">EVSE Mode</string>
+    <string name="remote_start">Remote Start</string>
+    <string name="remote_stop">Remote Stop</string>
+    <string name="waiting_for_response">Wating for Response</string>
+    <string name="failed_to_start">Failed to Start!</string>
+    <string name="failed_to_stop">Failed to Stop!</string>
+    <string name="success">Success</string>
+
+    <!--Logout-->
+    <string name="acc_not_verified">Your account is not verified, use the verification link in the email</string>
+    <string name="email_verification">Please check your email to activate your account. Activation link sent to your registered e-mail id.</string>
+
+    <!--Tool Tips-->
+    <string name="password_tip">Include at least one uppercase and one lowercase character.\n
+        Include at least one number. \n Include at least one special character.\n Have between 8 - 50 characters.</string>
+    <string name="alias_tip">Provide the SCA identifier for your device. The Sca identifier can be found on the label of the SCA.</string>
+    <string name="charge_session_tip">A charge session starts when an EV plugs into a charge station and receives energy. This number is the total number of charge sessions acroll all the devices over the life of your account.</string>
+    <string name="ghg_saving_tip">This estimates the greenhouses gas (GHG) emissions (in kg of CO2) avoided by your EV compared to an average gasoline powered vehicle. Actual emissions avoided may be higher or lower depending on how your  electricity is generated and on the type of gasoline powered vehicle you replaced. See the FAQ for how this metric is calculated.</string>
+    <string name="gasoline_saving_tip">This estimates the amount of gasoline (in gallons) avoided based on the electrical energy used for EV driving, estimated miles driven and the average miles per gallon for a gasoline powered vehicle. Actual gasoline savings maybe higher or lower depending on the efficiency and driving style of each EV and EV driver respectively. See the FAQ for how this metric is calculated.</string>
+    <string name="monetary_saving_tip">This estimates the amount of money saved by EV drivers by driving electric ove driving a gasoline powered vehicle. See the FAQ for how this metric is calculated.</string>
+    <string name="sca_charge_control_tip"><![CDATA[The Manual control option allows a user to select three modes of operation:<br><br>
+        <b>Charge Normally:</b> This mode will enable the SCA and only allow it to monitor the charge session. No control or manipulation of the charge session will occur in this mode of operation.<br><br>
+        <b>Disable Charging:</b> This mode will disable the ability for the charge session to begin or stop an active charge session.<br><br>
+        <b>Controlled Charging:</b> Similar to Charge Normally in that this mode allows charging and monitors the charge session. However, this mode will allow manual control of the charge rate. Users will be able to set a current or power setpoint via the sliders and the SCA will not allow the charge session to exceed this maximum limit.<br><br>
+        Modes are not implemented until the user presses the Apply button.]]></string>
+    <string name="ev_mileage_control_tip"><![CDATA[This method of control allows the user to define a maximum electric miles for the charge session. If the charge session exceeds this amount the charge session will be ended.<br><br>This feature is useful if the user only needs a certain amount of energy/mileage for their next trip and doesn\'t want a full charge.<br><br>
+To use this feature enable this mode and select the electric vehicle and mileage needed. The user must press the apply button for changes to take effect.]]></string>
+    <string name="ev_mileage_needed_tip">Rate of energy flowing through the EVSE and SCA into the EV measured by the SCA.</string>
+    <string name="accumulated_ev_mileage_tip">Rate of energy flowing through the EVSE and SCA into the EV measured by the SCA.</string>
+    <string name="timer_based_control_tip"><![CDATA[This method of control allows the user to define a maximum time to allow the charge session to occur. If the charge session exceeds this duration the session will be ended.<br><br>This feature is useful to limit the amount of time a charge session occurs.<br><br>To use this feature enable this mode and select the maximum duration for a session. The user must press the apply button for changes to take effect.]]></string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

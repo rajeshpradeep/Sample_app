@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/session_info_title_lay"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:orientation="horizontal"
+        android:weightSum="4">
+        <View
+            android:id="@+id/highlight_view"
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:background="@color/yellow_gradient"
+            android:layout_gravity="center_horizontal"
+            />
+        <LinearLayout
+            android:id="@+id/plugin_date_time_llay"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/common_margin_5"
+            android:paddingBottom="@dimen/common_margin_5"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/common_margin_5">
+
+            <TextView
+                android:id="@+id/plugin_date_val"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="07/23/2019"
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@color/hint_color"
+                android:textSize="@dimen/text_14" />
+
+            <TextView
+                android:id="@+id/plugin_time_val"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:gravity="start"
+                android:maxLines="1"
+                android:text="02:17 PM"
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/hint_color"
+                android:textSize="@dimen/text_14" />
+        </LinearLayout>
+
+        <!--<TextView
+            android:id="@+id/transaction_id_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />
+
+        <TextView
+            android:id="@+id/device_name_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />
+
+        <TextView
+            android:id="@+id/port_name_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />
+
+        <TextView
+            android:id="@+id/group_name_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />
+
+        <TextView
+            android:id="@+id/station_type_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />-->
+
+        <!--<TextView
+            android:id="@+id/peak_power_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />
+
+        <TextView
+            android:id="@+id/avg_power_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />
+
+        <TextView
+            android:id="@+id/id_tag_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />
+
+        <TextView
+            android:id="@+id/session_start_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />
+
+        <TextView
+            android:id="@+id/session_end_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />-->
+
+        <TextView
+            android:id="@+id/session_duration_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14"
+            android:paddingTop="@dimen/common_margin_5"
+            android:paddingBottom="@dimen/common_margin_5"/>
+
+        <!--<TextView
+            android:id="@+id/charge_start_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />
+
+        <TextView
+            android:id="@+id/charge_end_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />-->
+
+        <TextView
+            android:id="@+id/charge_duration_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14"
+            android:paddingTop="@dimen/common_margin_5"
+            android:paddingBottom="@dimen/common_margin_5"/>
+
+        <TextView
+            android:id="@+id/energy_kwh_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14"
+            android:paddingTop="@dimen/common_margin_5"
+            android:paddingBottom="@dimen/common_margin_5"/>
+
+        <!--<TextView
+            android:id="@+id/end_reason_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />
+
+        <TextView
+            android:id="@+id/ghg_savings_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />
+
+        <TextView
+            android:id="@+id/ghg_saving_gals_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />
+
+        <TextView
+            android:id="@+id/start_soc_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />
+
+        <TextView
+            android:id="@+id/end_soc_lbl"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:maxLines="2"
+            android:padding="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />-->
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/session_info_dview"
+        style="@style/view_theme"
+        android:layout_marginStart="@dimen/common_margin_5"
+        android:layout_marginEnd="@dimen/common_margin_5" />
+
+</LinearLayout>

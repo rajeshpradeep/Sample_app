@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_screen"
+    tools:context=".ui.control_evse.ControlEVSEFragment">
+
+    <LinearLayout
+        android:id="@+id/toolbar_lay"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg_login"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/control_evse_parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_lay"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:id="@+id/control_evse_top_lay"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_curve_25"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".35"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <View
+                style="@style/view_theme"
+                android:layout_marginStart="@dimen/common_margin_20"
+                android:layout_marginEnd="@dimen/common_margin_20" />
+
+            <RelativeLayout
+                android:id="@+id/control_evse_port_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_20"
+                android:layout_marginEnd="@dimen/common_margin_20"
+                android:paddingTop="@dimen/common_margin_10"
+                android:paddingBottom="@dimen/common_margin_10">
+
+                <TextView
+                    android:id="@+id/control_evse_port_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="start"
+                    android:maxLines="1"
+                    android:text="@string/evse_id_port"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/control_evse_port_tview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="end"
+                    android:layout_toStartOf="@+id/port_arrow_img"
+                    android:layout_toEndOf="@id/control_evse_port_lbl"
+                    android:gravity="end"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/common_margin_10"
+                    android:paddingEnd="@dimen/common_margin_10"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/port_arrow_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:adjustViewBounds="true"
+                    android:padding="0dp"
+                    android:rotation="-90"
+                    android:scaleType="fitCenter"
+                    app:srcCompat="@drawable/ic_dropdown_arrow" />
+
+            </RelativeLayout>
+
+
+            <View
+                style="@style/view_theme"
+                android:layout_marginStart="@dimen/common_margin_20"
+                android:layout_marginEnd="@dimen/common_margin_20" />
+
+            <LinearLayout
+                android:id="@+id/control_evse_type_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_20"
+                android:layout_marginEnd="@dimen/common_margin_20"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/common_margin_10"
+                android:paddingBottom="@dimen/common_margin_10"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/control_evse_type_lbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight=".5"
+                    android:text="@string/control_type"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/control_evse_type_tview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight=".5"
+                    android:gravity="end"
+                    android:text="@string/manual"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14" />
+
+            </LinearLayout>
+
+            <View
+                style="@style/view_theme"
+                android:layout_marginStart="@dimen/common_margin_20"
+                android:layout_marginEnd="@dimen/common_margin_20" />
+
+            <LinearLayout
+                android:id="@+id/evse_mode_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_20"
+                android:layout_marginEnd="@dimen/common_margin_20"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/common_margin_10"
+                android:paddingBottom="@dimen/common_margin_10"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/evse_mode_lbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight=".5"
+                    android:text="@string/evse_mode"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/evse_mode_tview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight=".5"
+                    android:gravity="end"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Space
+            android:id="@+id/marginSpacer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="70dp"
+            app:layout_constraintBottom_toBottomOf="@+id/control_evse_top_lay"
+            app:layout_constraintLeft_toLeftOf="@id/control_evse_top_lay"
+            app:layout_constraintRight_toRightOf="@id/control_evse_top_lay" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/common_margin_20"
+            android:layout_marginEnd="@dimen/common_margin_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/marginSpacer">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/evse_type_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_white"
+                    android:orientation="vertical"
+                    android:padding="@dimen/common_margin_10">
+
+                    <RelativeLayout
+                        android:id="@+id/evse_type_rlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/common_margin_10"
+                        android:paddingBottom="@dimen/common_margin_10">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/evse_type_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="start"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            app:srcCompat="@drawable/ic_electric_car" />
+
+                        <TextView
+                            android:id="@+id/evse_type_tview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_toEndOf="@+id/evse_type_img"
+                            android:paddingStart="@dimen/common_margin_5"
+                            android:paddingEnd="@dimen/common_margin_5"
+                            android:text="@string/manual"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                            android:textColor="@color/hint_color"
+                            android:textSize="@dimen/text_16" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ic_manual_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical|end"
+                            android:adjustViewBounds="true"
+                            android:rotation="-90"
+                            android:scaleType="centerInside"
+                            android:tint="@color/hint_color"
+                            app:srcCompat="@drawable/ic_dropdown_arrow" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/evse_type_val_tview"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_edittext_lite_green"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/common_margin_10"
+                        android:paddingEnd="@dimen/common_margin_10"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/text_14" />
+
+                    <LinearLayout
+                        android:id="@+id/evse_control_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <View
+                            style="@style/view_theme"
+                            android:layout_marginTop="@dimen/common_margin_5"
+                            android:layout_marginBottom="@dimen/common_margin_5" />
+
+                        <TextView
+                            android:id="@+id/evse_charge_lbl"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/common_margin_10"
+                            android:paddingEnd="@dimen/common_margin_10"
+                            android:text="@string/manual"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                            android:textColor="@color/green_gradient"
+                            android:textSize="@dimen/text_15" />
+
+                        <LinearLayout
+                            android:id="@+id/control_evse_mode_lay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/common_margin_10"
+                            android:background="@color/bg_screen"
+                            android:baselineAligned="false"
+                            android:orientation="vertical"
+                            android:padding="@dimen/common_margin_20"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/evse_mode_lbl2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center_vertical"
+                                android:paddingStart="@dimen/common_margin_5"
+                                android:paddingEnd="@dimen/common_margin_5"
+                                android:text="@string/evse_mode"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="@dimen/text_15" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/common_margin_20"
+                                android:layout_marginBottom="@dimen/common_margin_20"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.SwitchCompat
+                                    android:id="@+id/evse_mode_switchcompat"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:checked="false"
+                                    android:gravity="start"
+                                    android:textOff="@string/disabled"
+                                    android:textOn="@string/apply"
+                                    android:theme="@style/switch_compact_theme" />
+
+                                <TextView
+                                    android:id="@+id/evse_mode_switchcompat_tview"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center_vertical"
+                                    android:gravity="center_vertical"
+                                    android:paddingStart="@dimen/common_margin_5"
+                                    android:paddingEnd="@dimen/common_margin_5"
+                                    android:text="@string/disabled"
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                    android:textColor="@color/hint_color"
+                                    android:textSize="@dimen/text_15" />
+                            </LinearLayout>
+
+                            <FrameLayout
+                                android:id="@+id/start_btn_flay"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/common_margin_45"
+                                android:layout_marginTop="@dimen/common_margin_10"
+                                android:layout_marginBottom="@dimen/common_margin_10">
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/remote_start_btn"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/common_margin_45"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/bg_edittext_lite_green"
+                                    android:drawableStart="@drawable/ic_play_green"
+                                    android:gravity="center"
+                                    android:paddingStart="@dimen/common_margin_20"
+                                    android:paddingEnd="@dimen/common_margin_20"
+                                    android:text="@string/remote_start"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/yellow_gradient"
+                                    android:textSize="@dimen/text_15" />
+
+                                <LinearLayout
+                                    android:id="@+id/start_btn_progress_llay"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:alpha=".7"
+                                    android:background="@drawable/bg_edittext_hint_color"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:translationZ="@dimen/common_margin_45"
+                                    android:visibility="gone">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/start_btn_progress_img"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:adjustViewBounds="true"
+                                        android:paddingStart="@dimen/common_margin_15"
+                                        android:paddingTop="@dimen/common_margin_5"
+                                        android:paddingEnd="@dimen/common_margin_15"
+                                        android:paddingBottom="@dimen/common_margin_5"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ic_loader" />
+
+                                    <TextView
+                                        android:id="@+id/start_btn_progress_tview"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/text_15" />
+                                </LinearLayout>
+                            </FrameLayout>
+
+                            <FrameLayout
+                                android:id="@+id/stop_btn_flay"
+                                android:layout_width="match_parent"
+                                android:layout_height="@dimen/common_margin_45"
+                                android:layout_marginTop="@dimen/common_margin_10"
+                                android:layout_marginBottom="@dimen/common_margin_10">
+
+                                <androidx.appcompat.widget.AppCompatButton
+                                    android:id="@+id/remote_stop_btn"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="@dimen/common_margin_45"
+                                    android:layout_gravity="center"
+                                    android:background="@drawable/bg_edittext_edittext_stroke"
+                                    android:drawableStart="@drawable/ic_stop_red"
+                                    android:drawableTint="@color/divider_view"
+                                    android:gravity="center"
+                                    android:paddingStart="@dimen/common_margin_20"
+                                    android:paddingEnd="@dimen/common_margin_20"
+                                    android:text="@string/remote_stop"
+                                    android:textAllCaps="false"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/text_15" />
+
+                                <LinearLayout
+                                    android:id="@+id/stop_btn_progress_llay"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:alpha=".7"
+                                    android:background="@drawable/bg_edittext_hint_color"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:translationZ="@dimen/common_margin_45"
+                                    android:visibility="gone">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/stop_btn_progress_img"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:adjustViewBounds="true"
+                                        android:paddingStart="@dimen/common_margin_15"
+                                        android:paddingTop="@dimen/common_margin_5"
+                                        android:paddingEnd="@dimen/common_margin_15"
+                                        android:paddingBottom="@dimen/common_margin_5"
+                                        android:scaleType="centerInside"
+                                        android:src="@drawable/ic_loader" />
+
+                                    <TextView
+                                        android:id="@+id/stop_btn_progress_tview"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="Wating for Response..."
+                                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                        android:textColor="@color/white"
+                                        android:textSize="@dimen/text_15" />
+                                </LinearLayout>
+                            </FrameLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

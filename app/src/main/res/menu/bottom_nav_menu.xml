@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/bottom_menu_dashboard"
+        android:icon="@drawable/ic_dashboard_green"
+        android:title="@string/dashboard" />
+
+    <item
+        android:id="@+id/bottom_menu_monitor"
+        android:icon="@drawable/ic_monitor_grey"
+        android:title="@string/monitor" />
+
+    <!--<item android:visible="false"
+        android:id="@+id/bottom_menu_monitor_evse"
+        android:icon="@drawable/ic_monitor_grey"
+        android:title="@string/monitor" />-->
+
+    <item
+        android:id="@+id/bottom_menu_control"
+        android:icon="@drawable/ic_control_grey"
+        android:title="@string/control" />
+
+    <!--<item
+        android:visible="false"
+        android:id="@+id/bottom_menu_control_evse"
+        android:icon="@drawable/ic_control_grey"
+        android:title="@string/control" />-->
+
+    <item
+        android:id="@+id/bottom_menu_session_info"
+        android:icon="@drawable/ic_info_gray"
+        android:title="@string/session_info" />
+
+    <item
+        android:id="@+id/bottom_menu_leaderboard"
+        android:icon="@drawable/ic_leaderboard_grey"
+        android:title="@string/leaderboard" />
+
+</menu>

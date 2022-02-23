@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/leaderboard_item_rlay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_margin_50"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:clickable="true"
+        android:focusable="true"
+        android:paddingStart="@dimen/common_margin_10"
+        android:paddingTop="@dimen/common_margin_5"
+        android:paddingEnd="@dimen/common_margin_10"
+        android:paddingBottom="@dimen/common_margin_5"
+        android:weightSum="1">
+
+        <TextView
+            android:id="@+id/rank_tview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:gravity="start|center_vertical"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:maxLines="1"
+            android:text="1."
+            android:paddingStart="@dimen/common_margin_5"
+            android:paddingEnd="0dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />
+
+        <TextView
+            android:id="@+id/name_tview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|center_vertical"
+            android:gravity="start|center_vertical"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/points_value_tview"
+            android:layout_toEndOf="@id/rank_tview"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:text="Rajesh Pradeep Gasdasdasdasdasdasdasdasdasdasdasdasdasdasd"
+            android:padding="@dimen/common_margin_10"
+            android:paddingStart="0dp"
+            android:paddingEnd="@dimen/common_margin_5"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />
+
+        <TextView
+            android:id="@+id/points_value_tview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|center_vertical"
+            android:layout_toStartOf="@id/rank_badge_rlay"
+            android:layout_centerVertical="true"
+            android:text="13980309"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:gravity="end|center_vertical"
+            android:padding="@dimen/common_margin_10"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_14" />
+
+        <RelativeLayout
+            android:id="@+id/rank_badge_rlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:visibility="visible">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_medal_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/img_desc"
+                android:scaleType="centerInside"
+                app:srcCompat="@drawable/ic_medal" />
+
+            <TextView
+                android:id="@+id/rank_value_tview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center_vertical"
+                android:paddingBottom="@dimen/common_margin_5"
+                android:text="1"
+                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_14" />
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/leaderboard_rank_dview"
+        style="@style/view_theme"
+        android:layout_marginStart="@dimen/common_margin_10"
+        android:layout_marginEnd="@dimen/common_margin_10" />
+</LinearLayout>

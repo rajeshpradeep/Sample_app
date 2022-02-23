@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.monitor.MonitorFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_screen"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/vehicle_top_lay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_curve_75"
+            android:orientation="vertical"
+            android:paddingBottom="80dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="?actionBarSize"
+                android:layout_marginStart="@dimen/common_margin_20"
+                android:layout_marginEnd="@dimen/common_margin_20"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ic_online_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="start|center_vertical"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/img_desc"
+                    android:maxWidth="32dp"
+                    android:maxHeight="32dp"
+                    android:scaleType="centerCrop"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ic_online_status" />
+
+                <TextView
+                    android:id="@+id/online_status_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@+id/ic_online_status"
+                    android:paddingStart="@dimen/common_margin_5"
+                    android:paddingEnd="@dimen/common_margin_5"
+                    android:text="@string/online"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/monitor_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/common_margin_5"
+                    android:paddingEnd="@dimen/common_margin_5"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_20" />
+
+                <ImageView
+                    android:id="@+id/settings_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:adjustViewBounds="true"
+                    android:layout_centerVertical="true"
+                    android:contentDescription="@string/img_desc"
+                    android:maxWidth="32dp"
+                    android:maxHeight="32dp"
+                    android:scaleType="centerCrop"
+                    android:visibility="visible"
+                    app:srcCompat="@drawable/ic_settings" />
+            </RelativeLayout>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_monitor"
+                android:layout_width="@dimen/common_margin_80"
+                android:layout_height="@dimen/common_margin_80"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/common_margin_20"
+                android:adjustViewBounds="true"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/ic_monitor_status" />
+
+            <TextView
+                android:id="@+id/charging_status_lbl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingStart="@dimen/common_margin_5"
+                android:paddingEnd="@dimen/common_margin_5"
+                android:textAllCaps="true"
+                android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_16" />
+
+            <View
+                style="@style/view_theme"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="@dimen/common_margin_10"
+                android:layout_marginEnd="80dp"
+                android:layout_marginBottom="@dimen/common_margin_20" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/common_margin_5">
+
+                <TextView
+                    android:id="@+id/station_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/common_margin_5"
+                    android:paddingEnd="@dimen/common_margin_5"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_16" />
+
+                <View
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/common_margin_10"
+                    android:layout_marginEnd="@dimen/common_margin_10"
+                    android:background="@color/divider_view" />
+
+                <TextView
+                    android:id="@+id/station_adapter_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/common_margin_5"
+                    android:paddingEnd="@dimen/common_margin_5"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_16" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sca_battery_llay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/common_margin_5">
+
+                <TextView
+                    android:id="@+id/sca_battery_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:drawableStart="@drawable/ic_battery_white"
+                    android:drawablePadding="@dimen/common_margin_5"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/common_margin_5"
+                    android:paddingEnd="@dimen/common_margin_5"
+                    android:text="@string/sca_battery"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_16" />
+
+                <TextView
+                    android:id="@+id/sca_battery_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_16" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/monitor_evse_port_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_20"
+                android:layout_marginEnd="@dimen/common_margin_20"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:paddingTop="@dimen/common_margin_10"
+                android:paddingBottom="@dimen/common_margin_10">
+
+                <TextView
+                    android:id="@+id/monitor_evse_port_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="@string/evse_id_port"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="@dimen/common_margin_5"
+                    android:padding="@dimen/common_margin_5"
+                    android:background="@drawable/bg_edittext_strok"
+                    android:id="@+id/port_dropdown_llay">
+
+                <TextView
+                    android:id="@+id/monitor_evse_port_tview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/common_margin_5"
+                    android:paddingEnd="@dimen/common_margin_5"
+                    android:text="Port 1"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/port_arrow_img"
+                    android:layout_gravity="center_vertical"
+                    app:srcCompat="@drawable/ic_dropdown_arrow"
+                    android:scaleType="fitCenter"
+                    android:rotation="0"
+                    android:adjustViewBounds="true"
+                    android:padding="0dp"
+                    android:layout_centerVertical="true"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/common_margin_5">
+
+                <TextView
+                    android:id="@+id/last_sync_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/common_margin_5"
+                    android:paddingEnd="@dimen/common_margin_5"
+                    android:text="@string/last_sync"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_16" />
+
+                <TextView
+                    android:id="@+id/last_sync_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_16" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/mode_lbl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:paddingStart="@dimen/common_margin_5"
+                    android:paddingEnd="@dimen/common_margin_5"
+                    android:text="@string/mode"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_16" />
+
+                <TextView
+                    android:id="@+id/mode_val"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textAllCaps="false"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_16" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/common_margin_10"
+            android:layout_marginTop="-75dp"
+            android:layout_marginEnd="@dimen/common_margin_10"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/monitor_grid_rview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                android:visibility="visible"
+                tools:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                tools:spanCount="2"
+                tools:itemCount="4"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                tools:listitem="@layout/monitor_gridview_item" />
+
+            <LinearLayout
+                android:id="@+id/evsc_llay"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/monitor_grid_rview"
+                app:layout_constraintEnd_toEndOf="@+id/monitor_grid_rview"
+                android:layout_gravity="center_horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/monitor_grid_rview"
+                android:layout_marginTop="@dimen/common_margin_10"
+                android:background="@drawable/bg_white"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/common_margin_10"
+                android:paddingBottom="@dimen/common_margin_10">
+
+                <TextView
+                    android:id="@+id/evsc_lbl"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:padding="@dimen/common_margin_10"
+                    android:text="@string/evsc"
+                    android:textAlignment="textStart"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                    android:textColor="@color/hint_color"
+                    android:textSize="@dimen/text_18" />
+
+                <LinearLayout
+                    android:id="@+id/evsc_type_llay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingStart="@dimen/common_margin_10"
+                    android:paddingTop="@dimen/common_margin_5"
+                    android:paddingEnd="@dimen/common_margin_10"
+                    android:paddingBottom="@dimen/common_margin_5"
+                    android:weightSum="1">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ic_evsc_type"
+                        android:layout_width="0dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_weight=".07"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/img_desc"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/ic_evse" />
+
+                    <TextView
+                        android:id="@+id/evsc_type_lbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".53"
+                        android:gravity="start"
+                        android:maxLines="2"
+                        android:padding="@dimen/common_margin_10"
+                        android:text="@string/evsc_type"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/text_14" />
+
+                    <TextView
+                        android:id="@+id/evsc_type_val"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".4"
+                        android:gravity="end"
+                        android:maxLines="2"
+                        android:padding="@dimen/common_margin_10"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/text_14" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/view_theme"
+                    android:layout_marginStart="@dimen/common_margin_5"
+                    android:layout_marginEnd="@dimen/common_margin_5" />
+
+                <LinearLayout
+                    android:id="@+id/max_amperage_llay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingStart="@dimen/common_margin_10"
+                    android:paddingTop="@dimen/common_margin_5"
+                    android:paddingEnd="@dimen/common_margin_10"
+                    android:paddingBottom="@dimen/common_margin_5"
+                    android:weightSum="1">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ic_max_amperage"
+                        android:layout_width="0dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="start|center_vertical"
+                        android:layout_weight=".07"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/img_desc"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/ic_amperage" />
+
+                    <TextView
+                        android:id="@+id/max_amperage_lbl"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".53"
+                        android:gravity="start"
+                        android:maxLines="2"
+                        android:padding="@dimen/common_margin_10"
+                        android:text="@string/max_amperage"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/text_14" />
+
+                    <TextView
+                        android:id="@+id/max_amperage_val"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight=".4"
+                        android:gravity="end"
+                        android:maxLines="2"
+                        android:padding="@dimen/common_margin_10"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/text_14" />
+
+                </LinearLayout>
+
+                <View
+                    style="@style/view_theme"
+                    android:layout_marginStart="@dimen/common_margin_5"
+                    android:layout_marginEnd="@dimen/common_margin_5" />
+
+                <RelativeLayout
+                    android:id="@+id/status_rlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_margin_10"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingStart="@dimen/common_margin_10"
+                    android:paddingTop="@dimen/common_margin_5"
+                    android:paddingEnd="@dimen/common_margin_10"
+                    android:paddingBottom="@dimen/common_margin_5">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ic_monitor_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginTop="@dimen/common_margin_10"
+                        android:adjustViewBounds="true"
+                        android:contentDescription="@string/img_desc"
+                        android:minWidth="32dp"
+                        android:minHeight="32dp"
+                        android:scaleType="centerInside"
+                        app:srcCompat="@drawable/ic_information_green" />
+
+                    <TextView
+                        android:id="@+id/monitor_status_tview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="@dimen/common_margin_10"
+                        android:layout_marginTop="@dimen/common_margin_10"
+                        android:layout_toEndOf="@+id/ic_monitor_status"
+                        android:gravity="start"
+                        android:maxLines="1"
+                        android:text="@string/status"
+                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/text_14" />
+
+                    <LinearLayout
+                        android:id="@+id/monitor_status_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/common_margin_20"
+                        android:layout_toEndOf="@+id/monitor_status_tview"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:id="@+id/status_ev_max_draw_lay"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:background="@drawable/bg_edittext_gray"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/common_margin_20"
+                            android:paddingTop="@dimen/common_margin_10"
+                            android:paddingEnd="@dimen/common_margin_20"
+                            android:paddingBottom="@dimen/common_margin_10">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ev_max_draw_arrow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginEnd="@dimen/common_margin_10"
+                                android:adjustViewBounds="true"
+                                android:minWidth="22dp"
+                                android:minHeight="22dp"
+                                android:rotation="180"
+                                android:scaleType="fitXY"
+                                android:tint="@color/yellow_gradient"
+                                app:srcCompat="@drawable/ic_back_arrow_green" />
+
+                            <TextView
+                                android:id="@+id/ev_max_draw_tview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:maxLines="1"
+                                android:text="EV Max Draw"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@color/hint_color"
+                                android:textSize="@dimen/text_14" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/limitted_evsc_lay"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="@dimen/common_margin_5"
+                            android:background="@drawable/bg_edittext_gray"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/common_margin_20"
+                            android:paddingTop="@dimen/common_margin_10"
+                            android:paddingEnd="@dimen/common_margin_20"
+                            android:paddingBottom="@dimen/common_margin_10">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/limitted_evsc_arrow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginEnd="@dimen/common_margin_10"
+                                android:adjustViewBounds="true"
+                                android:minWidth="22dp"
+                                android:minHeight="22dp"
+                                android:rotation="180"
+                                android:scaleType="fitXY"
+                                android:tint="@color/yellow_gradient"
+                                app:srcCompat="@drawable/ic_back_arrow_green" />
+
+                            <TextView
+                                android:id="@+id/limitted_evsc_tview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:maxLines="1"
+                                android:text="Limited by EVSE"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@color/hint_color"
+                                android:textSize="@dimen/text_14" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/charge_status_lay"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="@dimen/common_margin_5"
+                            android:background="@drawable/bg_edittext_gray"
+                            android:orientation="horizontal"
+                            android:paddingStart="@dimen/common_margin_20"
+                            android:paddingTop="@dimen/common_margin_10"
+                            android:paddingEnd="@dimen/common_margin_20"
+                            android:paddingBottom="@dimen/common_margin_10">
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/charge_status_arrow"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_marginEnd="@dimen/common_margin_10"
+                                android:adjustViewBounds="true"
+                                android:minWidth="22dp"
+                                android:minHeight="22dp"
+                                android:rotation="180"
+                                android:scaleType="fitXY"
+                                android:tint="@color/yellow_gradient"
+                                app:srcCompat="@drawable/ic_back_arrow_green" />
+
+                            <TextView
+                                android:id="@+id/charge_status_tview"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:text="Charge Nearing End"
+                                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                                android:textColor="@color/hint_color"
+                                android:textSize="@dimen/text_14" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

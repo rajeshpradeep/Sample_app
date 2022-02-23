@@ -1,0 +1,1421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_screen"
+    tools:context=".ui.control.ControlFragment">
+
+    <LinearLayout
+        android:id="@+id/toolbar_lay"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/bg_login"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/header_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/control_parent_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar_lay"
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:id="@+id/notification_top_lay"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_curve_25"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent=".3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <View
+                style="@style/view_theme"
+                android:layout_marginStart="@dimen/common_margin_20"
+                android:layout_marginEnd="@dimen/common_margin_20" />
+
+            <LinearLayout
+                android:id="@+id/control_type_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_20"
+                android:layout_marginEnd="@dimen/common_margin_20"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/common_margin_10"
+                android:paddingBottom="@dimen/common_margin_10"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/control_type_lbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight=".5"
+                    android:text="@string/control_type"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/control_type_tview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight=".5"
+                    android:gravity="end"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14" />
+
+            </LinearLayout>
+
+            <View
+                style="@style/view_theme"
+                android:layout_marginStart="@dimen/common_margin_20"
+                android:layout_marginEnd="@dimen/common_margin_20" />
+
+            <LinearLayout
+                android:id="@+id/sca_mode_lay"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_20"
+                android:layout_marginEnd="@dimen/common_margin_20"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/common_margin_10"
+                android:paddingBottom="@dimen/common_margin_10"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/sca_mode_lbl"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight=".5"
+                    android:text="@string/sca_mode"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14" />
+
+                <TextView
+                    android:id="@+id/sca_mode_tview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_weight=".5"
+                    android:gravity="end"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_14" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Space
+            android:id="@+id/marginSpacer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="70dp"
+            app:layout_constraintBottom_toBottomOf="@+id/notification_top_lay"
+            app:layout_constraintLeft_toLeftOf="@id/notification_top_lay"
+            app:layout_constraintRight_toRightOf="@id/notification_top_lay" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/common_margin_20"
+            android:layout_marginEnd="@dimen/common_margin_20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/marginSpacer">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/sca_type_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_white"
+                    android:orientation="vertical"
+                    android:padding="@dimen/common_margin_10">
+
+                    <RelativeLayout
+                        android:id="@+id/sca_type_rlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/common_margin_10"
+                        android:paddingBottom="@dimen/common_margin_10">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/sca_type_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="start"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            app:srcCompat="@drawable/ic_electric_car" />
+
+                        <TextView
+                            android:id="@+id/sca_type_tview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_toEndOf="@+id/sca_type_img"
+                            android:paddingStart="@dimen/common_margin_5"
+                            android:paddingEnd="@dimen/common_margin_5"
+                            android:text="@string/manual"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                            android:textColor="@color/hint_color"
+                            android:textSize="@dimen/text_16" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ic_milage_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical|end"
+                            android:adjustViewBounds="true"
+                            android:rotation="-90"
+                            android:scaleType="centerInside"
+                            android:tint="@color/hint_color"
+                            app:srcCompat="@drawable/ic_dropdown_arrow" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/sca_type_val_tview"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_lite_yellow_gradient"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/common_margin_10"
+                        android:paddingEnd="@dimen/common_margin_10"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/text_14" />
+
+                    <LinearLayout
+                        android:id="@+id/sca_control_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <View
+                            style="@style/view_theme"
+                            android:layout_marginTop="@dimen/common_margin_5"
+                            android:layout_marginBottom="@dimen/common_margin_5" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/sca_charge_lbl"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".9"
+                                android:gravity="center_vertical"
+                                android:paddingStart="@dimen/common_margin_10"
+                                android:paddingEnd="@dimen/common_margin_10"
+                                android:text="@string/sca_charge_control"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                android:textColor="@color/green_gradient"
+                                android:textSize="@dimen/text_14" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/sca_info_img"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".1"
+                                android:adjustViewBounds="true"
+                                android:maxWidth="32dp"
+                                android:maxHeight="32dp"
+                                android:padding="@dimen/common_margin_5"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/ic_info_gray" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/charge_power_lay"
+                            android:layout_width="match_parent"
+                            android:layout_height="125dp"
+                            android:baselineAligned="false"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:id="@+id/charge_lay"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginEnd="@dimen/common_margin_2"
+                                android:layout_weight=".5"
+                                android:orientation="vertical">
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/charge_clay"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="start"
+                                    android:focusableInTouchMode="false"
+                                    android:minHeight="80dp"
+                                    app:cardBackgroundColor="@color/bg_screen"
+                                    app:cardCornerRadius="12dp"
+                                    app:cardElevation="3dp"
+                                    app:cardMaxElevation="3dp"
+                                    app:cardPreventCornerOverlap="false"
+                                    app:cardUseCompatPadding="true"
+                                    app:contentPadding="0dp">
+
+                                    <LinearLayout
+                                        android:id="@+id/charge_inner_llay"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:background="@null"
+                                        android:foreground="?android:attr/selectableItemBackground"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:paddingTop="@dimen/common_margin_5"
+                                        android:paddingBottom="@dimen/common_margin_5">
+
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/charge_img"
+                                            android:layout_width="32dp"
+                                            android:layout_height="32dp"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:button="@android:color/transparent"
+                                            android:clickable="true"
+                                            android:contentDescription="@string/img_desc"
+                                            android:focusable="true"
+                                            android:minWidth="32dp"
+                                            android:minHeight="32dp"
+                                            android:scaleType="centerInside"
+                                            app:srcCompat="@drawable/ic_amperage" />
+
+                                        <TextView
+                                            android:id="@+id/charge_tview"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="40dp"
+                                            android:gravity="center"
+                                            android:maxLines="1"
+                                            android:textAlignment="gravity"
+                                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                            android:textColor="@color/green_gradient"
+                                            android:textSize="@dimen/text_18" />
+
+                                        <TextView
+                                            android:id="@+id/charge_key_tview"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:maxLines="2"
+                                            android:text="@string/charge_current"
+                                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                            android:textColor="@color/hint_color"
+                                            android:textSize="@dimen/text_12" />
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:id="@+id/power_lay"
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/common_margin_2"
+                                android:layout_weight=".5"
+                                android:orientation="vertical">
+
+                                <androidx.cardview.widget.CardView
+                                    android:id="@+id/power_clay"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="start"
+                                    android:focusableInTouchMode="false"
+                                    android:minHeight="80dp"
+                                    app:cardBackgroundColor="@color/bg_screen"
+                                    app:cardCornerRadius="12dp"
+                                    app:cardElevation="3dp"
+                                    app:cardMaxElevation="3dp"
+                                    app:cardPreventCornerOverlap="false"
+                                    app:cardUseCompatPadding="true"
+                                    app:contentPadding="0dp">
+
+                                    <LinearLayout
+                                        android:id="@+id/power_inner_llay"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center"
+                                        android:background="@null"
+                                        android:foreground="?android:attr/selectableItemBackground"
+                                        android:gravity="center"
+                                        android:orientation="vertical"
+                                        android:paddingTop="@dimen/common_margin_5"
+                                        android:paddingBottom="@dimen/common_margin_5">
+
+
+                                        <androidx.appcompat.widget.AppCompatImageView
+                                            android:id="@+id/power_img"
+                                            android:layout_width="32dp"
+                                            android:layout_height="32dp"
+                                            android:layout_gravity="center"
+                                            android:adjustViewBounds="true"
+                                            android:button="@android:color/transparent"
+                                            android:clickable="true"
+                                            android:contentDescription="@string/img_desc"
+                                            android:focusable="true"
+                                            android:minWidth="32dp"
+                                            android:minHeight="32dp"
+                                            android:scaleType="centerInside"
+                                            app:srcCompat="@drawable/ic_electric_car" />
+
+                                        <TextView
+                                            android:id="@+id/power_tview"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="40dp"
+                                            android:gravity="center"
+                                            android:maxLines="1"
+                                            android:textAlignment="gravity"
+                                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                            android:textColor="@color/green_gradient"
+                                            android:textSize="@dimen/text_18" />
+
+                                        <TextView
+                                            android:id="@+id/power_key_tview"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:maxLines="2"
+                                            android:text="@string/active_power"
+                                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                            android:textColor="@color/hint_color"
+                                            android:textSize="@dimen/text_12" />
+
+                                    </LinearLayout>
+
+                                </androidx.cardview.widget.CardView>
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/sca_mode_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="start"
+                            android:text="@string/sca_mode"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                            android:textColor="@color/green_gradient"
+                            android:textSize="@dimen/text_14" />
+
+                        <RadioGroup
+                            android:id="@+id/sca_mode_rgroup"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatRadioButton
+                                android:id="@+id/charge_noramlly_rbtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="@color/yellow_gradient"
+                                android:text="@string/charge_normally"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                android:textColor="@color/hint_color"
+                                android:textSize="@dimen/text_14" />
+
+                            <androidx.appcompat.widget.AppCompatRadioButton
+                                android:id="@+id/disable_charge_rbtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="@color/yellow_gradient"
+                                android:text="@string/disable_charging"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                android:textColor="@color/hint_color"
+                                android:textSize="@dimen/text_14" />
+
+                            <androidx.appcompat.widget.AppCompatRadioButton
+                                android:id="@+id/control_charge_rbtn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="@color/yellow_gradient"
+                                android:text="@string/controlled_charging"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                android:textColor="@color/hint_color"
+                                android:textSize="@dimen/text_14" />
+
+                        </RadioGroup>
+
+                        <LinearLayout
+                            android:id="@+id/control_seekbar_lay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/charge_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:paddingStart="@dimen/common_margin_5"
+                                android:paddingEnd="@dimen/common_margin_5"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                android:textColor="@color/green_gradient"
+                                android:textSize="@dimen/text_14" />
+
+                            <androidx.appcompat.widget.AppCompatSeekBar
+                                android:id="@+id/charge_seekbar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxHeight="3dp"
+                                android:minHeight="3dp"
+                                android:progressDrawable="@drawable/seekbar_style"
+                                android:progressTint="@color/green_gradient"
+                                android:scrollbarThumbHorizontal="@color/hint_color"
+                                android:thumb="@drawable/seekbar_thumb"
+                                android:thumbTint="@color/white"
+                                android:thumbTintMode="multiply" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/seekbar_start_val"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    android:layout_weight=".5"
+                                    android:gravity="start"
+                                    android:paddingStart="@dimen/common_margin_5"
+                                    android:paddingEnd="@dimen/common_margin_5"
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                    android:textColor="@color/hint_color"
+                                    android:textSize="@dimen/text_14" />
+
+                                <TextView
+                                    android:id="@+id/seekbar_end_val"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:layout_weight=".5"
+                                    android:gravity="end"
+                                    android:paddingStart="@dimen/common_margin_5"
+                                    android:paddingEnd="@dimen/common_margin_5"
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                    android:textColor="@color/hint_color"
+                                    android:textSize="@dimen/text_14" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/power_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="start"
+                                android:paddingStart="@dimen/common_margin_5"
+                                android:paddingEnd="@dimen/common_margin_5"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                android:textColor="@color/green_gradient"
+                                android:textSize="@dimen/text_14" />
+
+                            <androidx.appcompat.widget.AppCompatSeekBar
+                                android:id="@+id/power_seekbar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:maxHeight="3dp"
+                                android:minHeight="3dp"
+                                android:progressDrawable="@drawable/seekbar_style"
+                                android:progressTint="@color/green_gradient"
+                                android:scrollbarThumbHorizontal="@color/hint_color"
+                                android:thumb="@drawable/seekbar_thumb"
+                                android:thumbTint="@color/white"
+                                android:thumbTintMode="multiply" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                android:weightSum="1">
+
+                                <TextView
+                                    android:id="@+id/power_seekbar_start_val"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="start"
+                                    android:layout_weight=".5"
+                                    android:gravity="start"
+                                    android:paddingStart="@dimen/common_margin_5"
+                                    android:paddingEnd="@dimen/common_margin_5"
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                    android:textColor="@color/hint_color"
+                                    android:textSize="@dimen/text_14" />
+
+                                <TextView
+                                    android:id="@+id/power_seekbar_end_val"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="end"
+                                    android:layout_weight=".5"
+                                    android:gravity="end"
+                                    android:paddingStart="@dimen/common_margin_5"
+                                    android:paddingEnd="@dimen/common_margin_5"
+                                    android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                    android:textColor="@color/hint_color"
+                                    android:textSize="@dimen/text_14" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/apply_btn"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/common_margin_40"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/common_margin_10"
+                            android:layout_marginBottom="@dimen/common_margin_10"
+                            android:background="@drawable/btn_bg_colorprimary"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/common_margin_60"
+                            android:paddingEnd="@dimen/common_margin_60"
+                            android:text="@string/apply"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_14" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/milage_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_margin_10"
+                    android:background="@drawable/bg_white"
+                    android:orientation="vertical"
+                    android:padding="@dimen/common_margin_10">
+
+                    <RelativeLayout
+                        android:id="@+id/milage_rlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/common_margin_10"
+                        android:paddingBottom="@dimen/common_margin_10">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/milage_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="start"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            app:srcCompat="@drawable/ic_meter" />
+
+                        <TextView
+                            android:id="@+id/milage_tview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_toEndOf="@+id/milage_img"
+                            android:paddingStart="@dimen/common_margin_5"
+                            android:paddingEnd="@dimen/common_margin_5"
+                            android:text="@string/ev_mileage"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                            android:textColor="@color/hint_color"
+                            android:textSize="@dimen/text_16" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ic_ev_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical|end"
+                            android:adjustViewBounds="true"
+                            android:rotation="-90"
+                            android:scaleType="centerInside"
+                            android:tint="@color/hint_color"
+                            app:srcCompat="@drawable/ic_dropdown_arrow" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/add_vehicle_rlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/add_vehicle_tview"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:background="@null"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/common_margin_10"
+                            android:paddingEnd="@dimen/common_margin_10"
+                            android:text="@string/add_vehicle_info"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                            android:textColor="@color/hint_color"
+                            android:textSize="@dimen/text_14" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/add_vehicle_btn"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/common_margin_40"
+                            android:layout_below="@+id/add_vehicle_tview"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/common_margin_10"
+                            android:layout_marginBottom="@dimen/common_margin_10"
+                            android:background="@drawable/btn_bg_colorprimary"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/common_margin_20"
+                            android:paddingEnd="@dimen/common_margin_20"
+                            android:text="@string/add_vehicle"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_14" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/milage_val_tview"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_lite_pink"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/common_margin_10"
+                        android:paddingEnd="@dimen/common_margin_10"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/text_14" />
+
+                    <LinearLayout
+                        android:id="@+id/ev_milage_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <View
+                            style="@style/view_theme"
+                            android:layout_marginTop="@dimen/common_margin_5"
+                            android:layout_marginBottom="@dimen/common_margin_5" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/ev_milage_lbl"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".9"
+                                android:gravity="center_vertical"
+                                android:paddingStart="@dimen/common_margin_10"
+                                android:paddingEnd="@dimen/common_margin_10"
+                                android:text="@string/ev_mileage_control"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                android:textColor="@color/green_gradient"
+                                android:textSize="@dimen/text_14" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ev_milage_info_img"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".1"
+                                android:adjustViewBounds="true"
+                                android:maxWidth="32dp"
+                                android:maxHeight="32dp"
+                                android:padding="@dimen/common_margin_5"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/ic_info_gray" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/ev_milage_switchcompat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:checked="false"
+                                android:gravity="start"
+                                android:textOff="@string/disabled"
+                                android:textOn="@string/apply"
+                                android:theme="@style/switch_compact_theme" />
+
+                            <TextView
+                                android:id="@+id/ev_milage_switchcompat_tview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center_vertical"
+                                android:paddingStart="@dimen/common_margin_5"
+                                android:paddingEnd="@dimen/common_margin_5"
+                                android:text="@string/disabled"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                android:textColor="@color/hint_color"
+                                android:textSize="@dimen/text_14" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/electric_vehicle_tview"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/common_margin_10"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/common_margin_5"
+                            android:paddingEnd="@dimen/common_margin_5"
+                            android:text="@string/electric_vehicle"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                            android:textColor="@color/green_gradient"
+                            android:textSize="@dimen/text_14" />
+
+                        <LinearLayout
+                            android:id="@+id/electric_vehicle_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="@dimen/common_margin_5"
+                            android:layout_marginBottom="@dimen/common_margin_5"
+                            android:background="@drawable/bg_edittext"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.AppCompatEditText
+                                android:id="@+id/electric_vehicle_etext"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginStart="@dimen/common_margin_20"
+                                android:layout_marginEnd="@dimen/common_margin_20"
+                                android:background="@null"
+                                android:drawableEnd="@drawable/ic_dropdown_arrow"
+                                android:ems="10"
+                                android:gravity="center|start"
+                                android:hint="@string/select"
+                                android:imeOptions="actionDone"
+                                android:inputType="none"
+                                android:maxLines="1"
+                                android:textColor="@color/black"
+                                android:textColorHint="@color/hint_color"
+                                android:textCursorDrawable="@null"
+                                android:textSize="@dimen/text_14" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/ev_milage_needed_tview"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".9"
+                                android:gravity="center_vertical"
+                                android:paddingStart="@dimen/common_margin_5"
+                                android:paddingEnd="@dimen/common_margin_5"
+                                android:text="@string/ev_mileage_needed"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                android:textColor="@color/green_gradient"
+                                android:textSize="@dimen/text_14" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/ev_milage_needed_info_img"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:layout_weight=".1"
+                                android:adjustViewBounds="true"
+                                android:maxWidth="32dp"
+                                android:maxHeight="32dp"
+                                android:padding="@dimen/common_margin_5"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/ic_info_gray" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatSeekBar
+                            android:id="@+id/ev_milage_seekbar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:maxHeight="3dp"
+                            android:minHeight="3dp"
+                            android:progressDrawable="@drawable/seekbar_style"
+                            android:progressTint="@color/green_gradient"
+                            android:scrollbarThumbHorizontal="@color/hint_color"
+                            android:thumb="@drawable/seekbar_thumb"
+                            android:thumbTint="@color/white"
+                            android:thumbTintMode="multiply" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/ev_milage_sc_val"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/common_margin_5"
+                                android:paddingStart="@dimen/common_margin_5"
+                                android:paddingEnd="@dimen/common_margin_5"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                android:textColor="@color/green_gradient"
+                                android:textSize="@dimen/text_14" />
+
+                            <TextView
+                                android:id="@+id/ev_milage_sc_tot"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/common_margin_5"
+                                android:paddingStart="@dimen/common_margin_5"
+                                android:paddingEnd="@dimen/common_margin_5"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                android:textColor="@color/hint_color"
+                                android:textSize="@dimen/text_14" />
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/ev_milage_apply_btn"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/common_margin_40"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/common_margin_10"
+                            android:layout_marginBottom="@dimen/common_margin_10"
+                            android:background="@drawable/btn_bg_colorprimary"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/common_margin_60"
+                            android:paddingEnd="@dimen/common_margin_60"
+                            android:text="@string/apply"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_14" />
+
+                        <LinearLayout
+                            android:id="@+id/acc_ev_milage_lay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/acc_ev_milage_clay"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="start"
+                                android:focusableInTouchMode="false"
+                                android:minHeight="100dp"
+                                app:cardBackgroundColor="@color/bg_screen"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="3dp"
+                                app:cardMaxElevation="3dp"
+                                app:cardPreventCornerOverlap="false"
+                                app:cardUseCompatPadding="true"
+                                app:contentPadding="0dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center_vertical"
+                                    android:background="@drawable/bg_bg_screen"
+                                    android:padding="@dimen/common_margin_5">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/acc_ev_milage_img"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:adjustViewBounds="true"
+                                        android:scaleType="centerInside"
+                                        app:srcCompat="@drawable/ic_electric_car" />
+
+                                    <TextView
+                                        android:id="@+id/acc_ev_milage_lbl"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="@dimen/common_margin_20"
+                                        android:layout_toEndOf="@+id/acc_ev_milage_img"
+                                        android:paddingStart="@dimen/common_margin_5"
+                                        android:paddingEnd="@dimen/common_margin_5"
+                                        android:text="@string/accumulate_ev_mileage"
+                                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                        android:textColor="@color/green_gradient"
+                                        android:textSize="@dimen/text_14" />
+
+                                    <TextView
+                                        android:id="@+id/eVehicle_lbl"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/acc_ev_milage_lbl"
+                                        android:layout_marginStart="@dimen/common_margin_20"
+                                        android:layout_toEndOf="@+id/acc_ev_milage_img"
+                                        android:paddingStart="@dimen/common_margin_5"
+                                        android:paddingEnd="@dimen/common_margin_5"
+                                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                        android:textColor="@color/hint_color"
+                                        android:textSize="@dimen/text_14" />
+
+                                    <ProgressBar
+                                        android:id="@+id/acc_ev_milage_progressbar"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                        android:layout_below="@+id/eVehicle_lbl"
+                                        android:layout_marginStart="@dimen/common_margin_20"
+                                        android:layout_toEndOf="@+id/acc_ev_milage_img"
+                                        android:padding="@dimen/common_margin_5"
+                                        android:max="100"
+                                        android:progress="50"
+                                        android:maxHeight="3dp"
+                                        android:minHeight="3dp"
+                                        android:progressDrawable="@drawable/progress_bar_corner"
+                                        android:progressTint="@color/green_gradient"
+                                        android:scrollbarThumbHorizontal="@color/hint_color"
+                                        android:thumb="@android:color/transparent" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/acc_ev_milage_progressbar"
+                                        android:layout_gravity="start"
+                                        android:layout_marginStart="20dp"
+                                        android:layout_marginTop="-1dp"
+                                        android:layout_toEndOf="@+id/acc_ev_milage_img"
+                                        android:gravity="start"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/acc_ev_milage_sc_val"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingStart="@dimen/common_margin_5"
+                                            android:paddingEnd="@dimen/common_margin_5"
+                                            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                            android:textColor="@color/green_gradient"
+                                            android:textSize="@dimen/text_20" />
+
+                                        <TextView
+                                            android:id="@+id/acc_ev_milage_sc_tot"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:paddingStart="@dimen/common_margin_5"
+                                            android:paddingEnd="@dimen/common_margin_5"
+                                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                            android:textColor="@color/hint_color"
+                                            android:textSize="@dimen/text_14" />
+                                    </LinearLayout>
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/acc_ev_milage_needed_info_img"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentEnd="true"
+                                        android:layout_toStartOf="@+id/acc_ev_milage_progressbar"
+                                        android:adjustViewBounds="true"
+                                        android:maxWidth="32dp"
+                                        android:maxHeight="32dp"
+                                        android:padding="@dimen/common_margin_5"
+                                        android:scaleType="centerInside"
+                                        app:srcCompat="@drawable/ic_info_gray" />
+
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/timer_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_margin_10"
+                    android:background="@drawable/bg_white"
+                    android:orientation="vertical"
+                    android:padding="@dimen/common_margin_10">
+
+                    <RelativeLayout
+                        android:id="@+id/timer_rlay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/common_margin_10"
+                        android:paddingBottom="@dimen/common_margin_10">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/timer_img"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="start"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            app:srcCompat="@drawable/ic_timer" />
+
+                        <TextView
+                            android:id="@+id/timer_tview"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginStart="@dimen/common_margin_15"
+                            android:layout_toEndOf="@+id/timer_img"
+                            android:paddingStart="@dimen/common_margin_5"
+                            android:paddingEnd="@dimen/common_margin_5"
+                            android:text="@string/timer"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                            android:textColor="@color/hint_color"
+                            android:textSize="@dimen/text_16" />
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ic_timer_arrow"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center_vertical|end"
+                            android:adjustViewBounds="true"
+                            android:rotation="-90"
+                            android:scaleType="centerInside"
+                            android:tint="@color/hint_color"
+                            app:srcCompat="@drawable/ic_dropdown_arrow" />
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/timer_val_tview"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/bg_lite_pink"
+                        android:gravity="center"
+                        android:paddingStart="@dimen/common_margin_10"
+                        android:paddingEnd="@dimen/common_margin_10"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                        android:textColor="@color/hint_color"
+                        android:textSize="@dimen/text_14" />
+
+                    <LinearLayout
+                        android:id="@+id/timer_based_lay"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <View
+                            style="@style/view_theme"
+                            android:layout_marginTop="@dimen/common_margin_5"
+                            android:layout_marginBottom="@dimen/common_margin_5" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <TextView
+                                android:id="@+id/timer_based_lbl"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".9"
+                                android:gravity="center_vertical"
+                                android:paddingStart="@dimen/common_margin_10"
+                                android:paddingEnd="@dimen/common_margin_10"
+                                android:text="@string/timer_based_control"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                android:textColor="@color/green_gradient"
+                                android:textSize="@dimen/text_14" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/timer_based_info_img"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight=".1"
+                                android:adjustViewBounds="true"
+                                android:maxWidth="32dp"
+                                android:maxHeight="32dp"
+                                android:padding="@dimen/common_margin_5"
+                                android:scaleType="centerInside"
+                                app:srcCompat="@drawable/ic_info_gray" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/tb_control_switchcompat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:checked="false"
+                                android:gravity="start"
+                                android:textOff="@string/disabled"
+                                android:textOn="@string/apply"
+                                android:theme="@style/switch_compact_theme" />
+
+                            <TextView
+                                android:id="@+id/tb_control_switchcompat_tview"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_vertical"
+                                android:gravity="center_vertical"
+                                android:paddingStart="@dimen/common_margin_5"
+                                android:paddingEnd="@dimen/common_margin_5"
+                                android:text="@string/disabled"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                android:textColor="@color/hint_color"
+                                android:textSize="@dimen/text_14" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/set_duration_lbl"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_marginTop="@dimen/common_margin_5"
+                            android:layout_marginBottom="@dimen/common_margin_5"
+                            android:gravity="center_vertical"
+                            android:paddingStart="@dimen/common_margin_5"
+                            android:paddingEnd="@dimen/common_margin_5"
+                            android:text="@string/set_duration"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                            android:textColor="@color/green_gradient"
+                            android:textSize="@dimen/text_14" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:weightSum="1">
+
+                            <LinearLayout
+                                android:id="@+id/start_timer_layout"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="@dimen/common_margin_5"
+                                android:layout_marginBottom="@dimen/common_margin_5"
+                                android:layout_weight=".4"
+                                android:background="@drawable/bg_edittext"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/start_time_etext"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="@dimen/common_margin_20"
+                                    android:layout_marginEnd="@dimen/common_margin_20"
+                                    android:background="@null"
+                                    android:ems="10"
+                                    android:gravity="center"
+                                    android:hint="00"
+                                    android:imeOptions="actionDone"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:maxLines="1"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/hint_color"
+                                    android:textCursorDrawable="@null"
+                                    android:textSize="@dimen/text_14" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight=".1"
+                                android:gravity="center"
+                                android:text=":"
+                                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                android:textColor="@color/hint_color"
+                                android:textSize="@dimen/common_margin_20" />
+
+                            <LinearLayout
+                                android:id="@+id/end_timer_layout"
+                                android:layout_width="0dp"
+                                android:layout_height="40dp"
+                                android:layout_marginTop="@dimen/common_margin_5"
+                                android:layout_marginBottom="@dimen/common_margin_5"
+                                android:layout_weight=".4"
+                                android:background="@drawable/bg_edittext"
+                                android:orientation="horizontal">
+
+                                <androidx.appcompat.widget.AppCompatEditText
+                                    android:id="@+id/end_time_etext"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginStart="@dimen/common_margin_20"
+                                    android:layout_marginEnd="@dimen/common_margin_20"
+                                    android:background="@null"
+                                    android:ems="10"
+                                    android:gravity="center"
+                                    android:hint="00"
+                                    android:imeOptions="actionDone"
+                                    android:inputType="number"
+                                    android:maxLength="2"
+                                    android:maxLines="1"
+                                    android:textColor="@color/black"
+                                    android:textColorHint="@color/hint_color"
+                                    android:textCursorDrawable="@null"
+                                    android:textSize="@dimen/text_14" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/time_remaining_lay"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/common_margin_2"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/timer_clay"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="start"
+                                android:focusableInTouchMode="false"
+                                android:minHeight="80dp"
+                                app:cardBackgroundColor="@color/bg_screen"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="3dp"
+                                app:cardMaxElevation="3dp"
+                                app:cardPreventCornerOverlap="false"
+                                app:cardUseCompatPadding="true"
+                                app:contentPadding="0dp">
+
+                                <RelativeLayout
+                                    android:id="@+id/time_remaining_llay"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:background="@null"
+                                    android:foreground="?android:attr/selectableItemBackground"
+                                    android:gravity="center_vertical"
+                                    android:orientation="horizontal"
+                                    android:paddingTop="@dimen/common_margin_5"
+                                    android:paddingBottom="@dimen/common_margin_10">
+
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/ic_timer_img"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginStart="@dimen/common_margin_20"
+                                        android:layout_marginEnd="@dimen/common_margin_20"
+                                        android:adjustViewBounds="true"
+                                        android:button="@android:color/transparent"
+                                        android:clickable="true"
+                                        android:contentDescription="@string/img_desc"
+                                        android:focusable="true"
+                                        android:maxWidth="32dp"
+                                        android:maxHeight="32dp"
+                                        android:scaleType="centerInside"
+                                        app:srcCompat="@drawable/ic_timer" />
+
+                                    <TextView
+                                        android:id="@+id/time_remaing_tview"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_alignParentTop="true"
+                                        android:layout_marginStart="@dimen/common_margin_10"
+                                        android:layout_marginEnd="@dimen/common_margin_10"
+                                        android:layout_toEndOf="@+id/ic_timer_img"
+                                        android:maxLines="1"
+                                        android:text="00:00:00"
+                                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                                        android:textColor="@color/green_gradient"
+                                        android:textSize="@dimen/text_20" />
+
+                                    <TextView
+                                        android:id="@+id/time_remaining_key_tview"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/time_remaing_tview"
+                                        android:layout_marginStart="@dimen/common_margin_10"
+                                        android:layout_marginEnd="@dimen/common_margin_10"
+                                        android:layout_toEndOf="@+id/ic_timer_img"
+                                        android:text="@string/time_remaining"
+                                        android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
+                                        android:textColor="@color/hint_color"
+                                        android:textSize="@dimen/text_14" />
+
+                                </RelativeLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/timer_apply_btn"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="wrap_content"
+                            android:layout_height="@dimen/common_margin_40"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/common_margin_10"
+                            android:layout_marginBottom="@dimen/common_margin_10"
+                            android:background="@drawable/btn_bg_colorprimary"
+                            android:gravity="center"
+                            android:paddingStart="@dimen/common_margin_60"
+                            android:paddingEnd="@dimen/common_margin_60"
+                            android:text="@string/apply"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_14" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

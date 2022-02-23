@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/bottom_menu_dashboard">
+
+    <fragment
+        android:id="@id/bottom_menu_dashboard"
+        android:name="structure.ui.dashboard.DashboardFragment"
+        android:label="@string/dashboard"
+        tools:layout="@layout/fragment_dashboard" >
+        <action
+            android:id="@+id/action_navigation_dashboard_to_navigation_settings"
+            app:destination="@id/navigation_settings"
+            app:enterAnim="@anim/fragment_right_in"
+            app:exitAnim="@anim/fragment_left_out"
+            app:popEnterAnim="@anim/fragment_left_in"
+            app:popExitAnim="@anim/fragment_right_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="structure.ui.settings.SettingsFragment"
+        android:label="@string/settings"
+        tools:layout="@layout/fragment_settings">
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_notifications"
+            app:destination="@id/navigation_notifications"
+            app:enterAnim="@anim/fragment_right_in"
+            app:exitAnim="@anim/fragment_left_out"
+            app:popEnterAnim="@anim/fragment_left_in"
+            app:popExitAnim="@anim/fragment_right_out" />
+        <action
+            android:id="@+id/action_navigation_settings_to_navigation_help"
+            app:destination="@id/navigation_help"
+            app:enterAnim="@anim/fragment_right_in"
+            app:exitAnim="@anim/fragment_left_out"
+            app:popEnterAnim="@anim/fragment_left_in"
+            app:popExitAnim="@anim/fragment_right_out" />
+        <action
+            android:id="@+id/action_navigation_settings_to_vehicleListFragment"
+            app:destination="@id/vehicleListFragment"
+            app:enterAnim="@anim/fragment_right_in"
+            app:exitAnim="@anim/fragment_left_out"
+            app:popEnterAnim="@anim/fragment_left_in"
+            app:popExitAnim="@anim/fragment_right_out" />
+        <action
+            android:id="@+id/action_navigation_settings_to_personalInfoFragment"
+            app:destination="@id/personalInfoFragment"
+            app:enterAnim="@anim/fragment_right_in"
+            app:exitAnim="@anim/fragment_left_out"
+            app:popEnterAnim="@anim/fragment_left_in"
+            app:popExitAnim="@anim/fragment_right_out" />
+        <action
+            android:id="@+id/action_navigation_settings_to_devicesFragment"
+            app:destination="@id/devicesFragment"
+            app:enterAnim="@anim/fragment_right_in"
+            app:exitAnim="@anim/fragment_left_out"
+            app:popEnterAnim="@anim/fragment_left_in"
+            app:popExitAnim="@anim/fragment_right_out" />
+        <action
+            android:id="@+id/action_navigation_settings_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment"
+            app:enterAnim="@anim/fragment_right_in"
+            app:exitAnim="@anim/fragment_left_out"
+            app:popEnterAnim="@anim/fragment_left_in"
+            app:popExitAnim="@anim/fragment_right_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_notifications"
+        android:name="structure.ui.settings.NotificationsFragment"
+        android:label="@string/notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/navigation_help"
+        android:name="structure.ui.settings.HelpFragment"
+        android:label="@string/help"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@id/bottom_menu_control"
+        android:name="structure.ui.control.ControlFragment"
+        android:label="fragment_control"
+        tools:layout="@layout/fragment_control" >
+        <action
+            android:id="@+id/action_controlFragment_to_navigation_settings"
+            app:destination="@id/navigation_settings"
+            app:enterAnim="@anim/fragment_right_in"
+            app:exitAnim="@anim/fragment_left_out"
+            app:popEnterAnim="@anim/fragment_left_in"
+            app:popExitAnim="@anim/fragment_right_out" />
+        <action
+            android:id="@+id/action_bottom_menu_control_to_vehicleListFragment"
+            app:destination="@id/vehicleListFragment"
+            app:enterAnim="@anim/fragment_right_in"
+            app:exitAnim="@anim/fragment_left_out"
+            app:popEnterAnim="@anim/fragment_left_in"
+            app:popExitAnim="@anim/fragment_right_out" >
+            <argument android:name="tag" app:argType="string" android:defaultValue="ControlFragment"/>
+        </action>
+        <action
+            android:id="@+id/action_bottom_menu_control_to_devicesFragment"
+            app:destination="@id/devicesFragment"
+            app:enterAnim="@anim/fragment_right_in"
+            app:exitAnim="@anim/fragment_left_out"
+            app:popEnterAnim="@anim/fragment_left_in"
+            app:popExitAnim="@anim/fragment_right_out" />
+    </fragment>
+    <fragment
+        android:id="@id/bottom_menu_leaderboard"
+        android:name="structure.ui.leaderboard.LeaderboardFragment"
+        android:label="fragment_leaderboard"
+        tools:layout="@layout/fragment_leaderboard" >
+        <action
+            android:id="@+id/action_leaderboardFragment_to_navigation_settings"
+            app:destination="@id/navigation_settings"
+            app:enterAnim="@anim/fragment_right_in"
+            app:exitAnim="@anim/fragment_left_out"
+            app:popEnterAnim="@anim/fragment_left_in"
+            app:popExitAnim="@anim/fragment_right_out" />
+    </fragment>
+    <fragment
+        android:id="@id/bottom_menu_monitor"
+        android:name="structure.ui.monitor.MonitorFragment"
+        android:label="fragment_monitor"
+        tools:layout="@layout/fragment_monitor" >
+        <action
+            android:id="@+id/action_monitorFragment_to_navigation_settings"
+            app:destination="@id/navigation_settings"
+            app:enterAnim="@anim/fragment_right_in"
+            app:exitAnim="@anim/fragment_left_out"
+            app:popEnterAnim="@anim/fragment_left_in"
+            app:popExitAnim="@anim/fragment_right_out" />
+        <action
+            android:id="@+id/action_bottom_menu_monitor_to_devicesFragment"
+            app:destination="@id/devicesFragment"
+            app:enterAnim="@anim/fragment_right_in"
+            app:exitAnim="@anim/fragment_left_out"
+            app:popEnterAnim="@anim/fragment_left_in"
+            app:popExitAnim="@anim/fragment_right_out" />
+    </fragment>
+    <fragment
+        android:id="@id/bottom_menu_session_info"
+        android:name="structure.ui.session_info.SessionInfoFragment"
+        android:label="fragment_session_info"
+        tools:layout="@layout/fragment_session_info" >
+        <action
+            android:id="@+id/action_sessionInfoFragment_to_navigation_settings"
+            app:destination="@id/navigation_settings"
+            app:enterAnim="@anim/fragment_right_in"
+            app:exitAnim="@anim/fragment_left_out"
+            app:popEnterAnim="@anim/fragment_left_in"
+            app:popExitAnim="@anim/fragment_right_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehicleListFragment"
+        android:name="structure.ui.settings.VehicleListFragment"
+        android:label="fragment_vehicle_list"
+        tools:layout="@layout/fragment_vehicle_list" />
+    <fragment
+        android:id="@+id/devicesFragment"
+        android:name="structure.ui.settings.DevicesFragment"
+        android:label="fragment_devices"
+        tools:layout="@layout/fragment_devices" />
+    <fragment
+        android:id="@+id/personalInfoFragment"
+        android:name="structure.ui.settings.PersonalInfoFragment"
+        android:label="PersonalInfoFragment" >
+
+        <action
+            android:id="@+id/action_personalInfoFragment_to_bottom_menu_dashboard"
+            app:destination="@id/bottom_menu_dashboard"
+            app:enterAnim="@anim/fragment_left_in"
+            app:exitAnim="@anim/fragment_right_out"
+            app:popEnterAnim="@anim/fragment_right_in"
+            app:popExitAnim="@anim/fragment_left_out" >
+        <argument android:name="tag" app:argType="string" android:defaultValue="PersonalInfoFragment"/>
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="structure.ui.settings.ChangePasswordFragment"
+        android:label="ChangePasswordFragment" />
+    <fragment
+        android:id="@id/bottom_menu_control_evse"
+        android:name="structure.ui.control_evse.ControlEVSEFragment"
+        android:label="fragment_control_evse"
+        tools:layout="@layout/fragment_control_evse" >
+        <action
+            android:id="@+id/action_bottom_menu_control_evse_to_navigation_settings"
+            app:destination="@id/navigation_settings"
+            app:enterAnim="@anim/fragment_left_in"
+            app:exitAnim="@anim/fragment_right_out"
+            app:popEnterAnim="@anim/fragment_right_in"
+            app:popExitAnim="@anim/fragment_left_out" />
+        <action
+            android:id="@+id/action_bottom_menu_control_evse_to_devicesFragment"
+            app:destination="@id/devicesFragment"
+            app:enterAnim="@anim/fragment_right_in"
+            app:exitAnim="@anim/fragment_left_out"
+            app:popEnterAnim="@anim/fragment_left_in"
+            app:popExitAnim="@anim/fragment_right_out" />
+    </fragment>
+</navigation>

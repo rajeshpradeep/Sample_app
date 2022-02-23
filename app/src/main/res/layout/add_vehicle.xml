@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/common_margin_5"
+    android:layout_marginEnd="@dimen/common_margin_5"
+    android:background="@drawable/dialog_bg"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end"
+        android:layout_marginTop="@dimen/common_margin_5"
+        android:layout_marginEnd="@dimen/common_margin_5"
+        android:adjustViewBounds="true"
+        android:maxWidth="22dp"
+        android:maxHeight="22dp"
+        android:padding="@dimen/common_margin_5"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/ic_close" />
+
+    <TextView
+        android:id="@+id/add_vehicle_lbl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/common_margin_10"
+        android:gravity="center_horizontal"
+        android:text="@string/add_new_vehicle"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/hint_color"
+        android:textSize="@dimen/text_18" />
+
+    <TextView
+        android:id="@+id/year_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_margin_25"
+        android:layout_marginTop="@dimen/common_margin_5"
+        android:layout_marginEnd="@dimen/common_margin_25"
+        android:layout_marginBottom="@dimen/common_margin_5"
+        android:gravity="start"
+        android:text="@string/year"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_14" />
+
+    <LinearLayout
+        android:id="@+id/year_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/common_margin_25"
+        android:layout_marginTop="@dimen/common_margin_5"
+        android:layout_marginEnd="@dimen/common_margin_25"
+        android:layout_marginBottom="@dimen/common_margin_5"
+        android:background="@drawable/bg_edittext"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/year_etext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/common_margin_20"
+            android:layout_marginEnd="@dimen/common_margin_20"
+            android:background="@null"
+            android:drawableEnd="@drawable/ic_dropdown_arrow"
+            android:ems="10"
+            android:gravity="center|start"
+            android:hint="@string/select"
+            android:imeOptions="actionNone"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_color"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_14" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/make_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_margin_25"
+        android:layout_marginTop="@dimen/common_margin_5"
+        android:layout_marginEnd="@dimen/common_margin_25"
+        android:layout_marginBottom="@dimen/common_margin_5"
+        android:gravity="start"
+        android:text="@string/make"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_14" />
+
+    <LinearLayout
+        android:id="@+id/make_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/common_margin_25"
+        android:layout_marginTop="@dimen/common_margin_5"
+        android:layout_marginEnd="@dimen/common_margin_25"
+        android:layout_marginBottom="@dimen/common_margin_5"
+        android:background="@drawable/bg_edittext"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/make_etext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/common_margin_20"
+            android:layout_marginEnd="@dimen/common_margin_20"
+            android:background="@null"
+            android:drawableEnd="@drawable/ic_dropdown_arrow"
+            android:ems="10"
+            android:gravity="center|start"
+            android:hint="@string/select"
+            android:imeOptions="actionNone"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_color"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_14" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/model_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/common_margin_25"
+        android:layout_marginTop="@dimen/common_margin_5"
+        android:layout_marginEnd="@dimen/common_margin_25"
+        android:layout_marginBottom="@dimen/common_margin_5"
+        android:gravity="start"
+        android:text="@string/model"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/text_14" />
+
+    <LinearLayout
+        android:id="@+id/model_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginStart="@dimen/common_margin_25"
+        android:layout_marginTop="@dimen/common_margin_5"
+        android:layout_marginEnd="@dimen/common_margin_25"
+        android:layout_marginBottom="@dimen/common_margin_5"
+        android:background="@drawable/bg_edittext"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/model_etext"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/common_margin_20"
+            android:layout_marginEnd="@dimen/common_margin_20"
+            android:background="@null"
+            android:drawableEnd="@drawable/ic_dropdown_arrow"
+            android:ems="10"
+            android:gravity="center|start"
+            android:hint="@string/select"
+            android:imeOptions="actionNone"
+            android:maxLines="1"
+            android:textColor="@color/black"
+            android:textColorHint="@color/hint_color"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/text_14" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/add_btn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/common_margin_25"
+        android:layout_marginTop="@dimen/common_margin_20"
+        android:layout_marginEnd="@dimen/common_margin_25"
+        android:layout_marginBottom="@dimen/common_margin_20"
+        android:background="@drawable/btn_bg_colorprimary"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:gravity="center"
+        android:paddingStart="50dp"
+        android:paddingEnd="50dp"
+        android:text="@string/add"
+        android:textAllCaps="false"
+        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_16" />
+
+</LinearLayout>
